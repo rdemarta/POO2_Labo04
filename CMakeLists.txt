@@ -3,6 +3,6 @@ project(POO2_Labo04)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(POO2_Labo04 main.cpp)
+add_executable(POO2_Labo04 main.cpp GameManager.cpp GameManager.hpp Field.cpp Field.hpp Humanoid.cpp Humanoid.hpp Humain.cpp Humain.hpp Vampire.cpp Vampire.hpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wconversion -Wextra -pedantic")
