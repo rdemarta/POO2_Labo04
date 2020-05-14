@@ -22,6 +22,7 @@ private:
     std::list<Humanoid*> _humanoids;
     int _turn;
     Displayer* _displayer;
+
 public:
     Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);
 

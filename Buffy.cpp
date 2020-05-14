@@ -9,3 +9,7 @@ Buffy::Buffy(size_t posX, size_t posY) : Humanoid(posX, posY) {}
 char Buffy::getSymbol() const {
     return Buffy::_symbol;
 }
+
+size_t Buffy::getMoveDistance() const {
+    return Buffy::_moveDistance;
+}

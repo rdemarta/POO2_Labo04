@@ -26,6 +26,7 @@ public:
     void setAction(Field* f);
     void executeAction(Field* f);
     virtual char getSymbol() const = 0;
+    virtual size_t getMoveDistance() const = 0;
 
     size_t getPosX() const;
     size_t getPosY() const;
