@@ -14,12 +14,12 @@
 Displayer::Displayer(Field* field) : _field(field) {}
 
 void Displayer::displayGame() const {
-    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field.getWidth() + 1) << _cornerBorderChar << std::endl;
-    for(size_t y = 0; y < _field.getHeight(); ++y){
+    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
+    for(size_t y = 0; y < _field->getHeight(); ++y){
         std::cout << _leftRightBorderChar;
-        for(size_t x = 0; x < _field.getWidth(); ++x){
+        for(size_t x = 0; x < _field->getWidth(); ++x){
             char charToDisplay = ' ';
-            for(Humanoid* humanoid: _field.getHumanoids()){
+            for(Humanoid* humanoid: _field->getHumanoids()){
                 if(humanoid->getPosX() == x && humanoid->getPosY() == y){
                     charToDisplay = humanoid->getSymbol();
                 }
@@ -28,6 +28,6 @@ void Displayer::displayGame() const {
         }
         std::cout << _leftRightBorderChar << std::endl;
     }
-    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field.getWidth() + 1) << _cornerBorderChar << std::endl;
+    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
 }
 

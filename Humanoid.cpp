@@ -18,6 +18,7 @@ bool Humanoid::isAlive() {
     return _isAlive;
 }
 
+/*
 void Humanoid::setAction(Field* f) {
 
 }
@@ -25,3 +26,4 @@ void Humanoid::setAction(Field* f) {
 void Humanoid::executeAction(Field* f) {
 
 }
+*/

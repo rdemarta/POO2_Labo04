@@ -11,8 +11,6 @@
 
 class Humanoid;
 
-class Displayer;
-
 class Field {
 
 private:
@@ -21,7 +19,6 @@ private:
     size_t _humainsNb;
     size_t _vampiresNb;
     std::list<Humanoid*> _humanoids;
-    Displayer _displayer;
     int _turn;
 public:
     Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);

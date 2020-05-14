@@ -12,7 +12,6 @@ using namespace std;
 Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     _width(width), _height(height),_humainsNb(humainsNb),_vampiresNb(vampiresNb)
 {
-    _displayer = Displayer(this);
 
     // Seed the random with current time to have all the time new random sequence
     srand((unsigned int)time(NULL));
@@ -66,6 +65,7 @@ Humanoid* Field::getHumanoidByPosition() {
 }
 
 int Field::nextTurn() {
+    /*
     // Déterminer les prochaines actions
     for (list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
         (*it)->setAction(*this);
@@ -81,4 +81,6 @@ int Field::nextTurn() {
         else
             ++it;
     return _turn++;
+     */
+    return 0;
 }
