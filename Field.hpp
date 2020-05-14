@@ -12,9 +12,14 @@
 class Field {
 
 private:
-    std::list<Humanoid*> humains;
-
+    std::list<Humanoid*> humanoids;
+    int _turn;
+    size_t width;
+    size_t height;
 public:
+    Humanoid* findNearest(Humanoid* h);
+    Humanoid* getHumanoidByPosition();
+    int nextTurn();
 
 };
 

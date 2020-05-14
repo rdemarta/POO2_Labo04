@@ -7,6 +7,7 @@
 
 
 #include <cstdlib>
+#include "Field.hpp"
 
 class Humanoid {
 
@@ -17,6 +18,9 @@ private:
 public:
     Humanoid(size_t posX, size_t posY);
 
+    bool isAlive();
+    void setAction(Field* f);
+    void executeAction(Field* f);
     virtual char getSymbol() const = 0;
 
     size_t getPosX() const;

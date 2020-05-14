@@ -13,3 +13,15 @@ size_t Humanoid::getPosX() const {
 size_t Humanoid::getPosY() const {
     return _posY;
 }
+
+bool Humanoid::isAlive() {
+    return _isAlive;
+}
+
+void Humanoid::setAction(Field* f) {
+
+}
+
+void Humanoid::executeAction(Field* f) {
+
+}
