@@ -4,8 +4,8 @@
 
 #include "Humain.hpp"
 
-Humain::Humain(int posX, int posY) : Humanoid(posX, posY) {}
+Humain::Humain(size_t posX, size_t posY) : Humanoid(posX, posY) {}
 
 char Humain::getSymbol() const {
-    return 'h';
+    return Humain::_symbol;
 }

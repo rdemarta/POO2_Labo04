@@ -6,19 +6,21 @@
 #define POO2_LABO04_HUMANOID_HPP
 
 
+#include <cstdlib>
+
 class Humanoid {
 
 private:
-    int _posX;
-    int _posY;
+    size_t _posX;
+    size_t _posY;
 
 public:
-    Humanoid(int posX, int posY);
+    Humanoid(size_t posX, size_t posY);
 
     virtual char getSymbol() const = 0;
 
-    int getPosX() const;
-    int getPosY() const;
+    size_t getPosX() const;
+    size_t getPosY() const;
 
 };
 

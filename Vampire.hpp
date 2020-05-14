@@ -11,9 +11,10 @@
 class Vampire : public Humanoid{
 
 private:
+    static const char _symbol = 'v';
 
 public:
-    Vampire(int posX, int posY);
+    Vampire(size_t posX, size_t posY);
 
     char getSymbol() const override;
 

@@ -12,19 +12,19 @@
 class GameManager {
 
 private:
-    int _width;
-    int _height;
-    int _humainsNb;
-    int _vampiresNb;
+    size_t _width;
+    size_t _height;
+    size_t _humainsNb;
+    size_t _vampiresNb;
 
 
-    char _cornerBorderChar = '+';
-    char _upDownBorderChar = '-';
-    char _leftRightBorderChar = '|';
+    const char _cornerBorderChar = '+';
+    const char _upDownBorderChar = '-';
+    const char _leftRightBorderChar = '|';
 
 public:
     std::list<Humanoid*> _humanoids;
-    GameManager(int width, int height, int humainsNb, int vampiresNb);
+    GameManager(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);
 
     void displayGameState() const;
 };

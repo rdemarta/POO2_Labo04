@@ -11,9 +11,10 @@
 class Humain : public Humanoid{
 
 private:
+    static const char _symbol = 'h';
 
 public:
-    Humain(int posX, int posY);
+    Humain(size_t posX, size_t posY);
 
     char getSymbol() const override;
 

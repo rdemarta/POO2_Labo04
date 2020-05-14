@@ -4,12 +4,12 @@
 
 #include "Humanoid.hpp"
 
-Humanoid::Humanoid(int posX, int posY) : _posX(posX), _posY(posY) {}
+Humanoid::Humanoid(size_t posX, size_t posY) : _posX(posX), _posY(posY) {}
 
-int Humanoid::getPosX() const {
+size_t Humanoid::getPosX() const {
     return _posX;
 }
 
-int Humanoid::getPosY() const {
+size_t Humanoid::getPosY() const {
     return _posY;
 }
