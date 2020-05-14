@@ -4,7 +4,7 @@
 
 #include "Humanoid.hpp"
 
-Humanoid::Humanoid(size_t posX, size_t posY) : _posX(posX), _posY(posY) {}
+Humanoid::Humanoid(size_t posX, size_t posY) : _posX(posX), _posY(posY), _isAlive(true) {}
 
 size_t Humanoid::getPosX() const {
     return _posX;

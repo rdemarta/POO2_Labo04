@@ -5,10 +5,11 @@
 #ifndef POO2_LABO04_FIELD_HPP
 #define POO2_LABO04_FIELD_HPP
 
-
 #include <list>
 #include "Humanoid.hpp"
 #include "Displayer.hpp"
+
+class Humanoid;
 
 class Displayer;
 

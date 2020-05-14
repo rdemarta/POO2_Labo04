@@ -8,6 +8,8 @@
 
 #include "Field.hpp"
 
+class Field;
+
 class Displayer {
 
 private:

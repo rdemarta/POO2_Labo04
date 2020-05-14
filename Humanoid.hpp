@@ -14,6 +14,7 @@ class Humanoid {
 private:
     size_t _posX;
     size_t _posY;
+    bool _isAlive;
 
 public:
     Humanoid(size_t posX, size_t posY);
