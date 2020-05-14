@@ -95,6 +95,7 @@
       </method>
       <method isAbstract="false" isStatic="false" name="getHumanoidByPosition" returnType="Humanoid*" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="nextTurn" returnType="int" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="clearHumanoids" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
     </entity>
     <entity entityType="CLASS" id="16262" isAbstract="false" name="Vampire" visibility="PUBLIC">
       <attribute const="false" defaultValue="" isStatic="true" name="_symbol" type="char" visibility="PRIVATE"/>
@@ -141,9 +142,8 @@
       </method>
     </entity>
     <entity entityType="CLASS" id="16689" isAbstract="false" name="Displayer" visibility="PUBLIC">
-      <method isAbstract="false" isStatic="false" name="displayGame" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
-      </method>
+      <method isAbstract="false" isStatic="false" name="displayGame" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="askForCommand" returnType="void" view="DEFAULT" visibility="PRIVATE"/>
     </entity>
   </diagramElements>
   <umlView grid="10" name="Main view" open="true">
@@ -151,7 +151,7 @@
       <line>
         <point>
           <x>1011</x>
-          <y>121</y>
+          <y>136</y>
         </point>
         <point>
           <x>1011</x>
@@ -160,13 +160,13 @@
       </line>
       <labelAssociation>
         <x>1015</x>
-        <y>180</y>
+        <y>187</y>
         <w>0</w>
         <h>16</h>
       </labelAssociation>
       <roleAssociation>
         <x>1015</x>
-        <y>125</y>
+        <y>140</y>
         <w>0</w>
         <h>16</h>
       </roleAssociation>
@@ -178,7 +178,7 @@
       </roleAssociation>
       <multipliciteAssociation>
         <x>997</x>
-        <y>125</y>
+        <y>140</y>
         <w>8</w>
         <h>16</h>
       </multipliciteAssociation>
@@ -386,7 +386,7 @@
         <x>930</x>
         <y>50</y>
         <w>210</w>
-        <h>70</h>
+        <h>85</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16278" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -426,7 +426,7 @@
         <x>930</x>
         <y>230</y>
         <w>250</w>
-        <h>160</h>
+        <h>175</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16216" displayAttributes="true" displayDefault="true" displayMethods="true">
