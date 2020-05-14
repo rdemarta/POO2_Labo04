@@ -333,15 +333,15 @@
       <line>
         <point>
           <x>101</x>
-          <y>661</y>
+          <y>721</y>
         </point>
         <point>
           <x>101</x>
-          <y>621</y>
+          <y>691</y>
         </point>
         <point>
           <x>271</x>
-          <y>621</y>
+          <y>691</y>
         </point>
         <point>
           <x>271</x>
@@ -353,7 +353,7 @@
       <line>
         <point>
           <x>271</x>
-          <y>661</y>
+          <y>721</y>
         </point>
         <point>
           <x>271</x>
@@ -365,15 +365,15 @@
       <line>
         <point>
           <x>441</x>
-          <y>661</y>
+          <y>721</y>
         </point>
         <point>
           <x>441</x>
-          <y>621</y>
+          <y>691</y>
         </point>
         <point>
           <x>271</x>
-          <y>621</y>
+          <y>691</y>
         </point>
         <point>
           <x>271</x>
@@ -440,26 +440,34 @@
     <componentView color="-2079" componentID="17486" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>30</x>
-        <y>660</y>
-        <w>150</w>
+        <y>720</y>
+        <w>110</w>
         <h>55</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="17503" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>200</x>
-        <y>660</y>
-        <w>150</w>
+        <y>720</y>
+        <w>100</w>
         <h>55</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="17504" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>360</x>
-        <y>660</y>
-        <w>150</w>
+        <y>720</y>
+        <w>100</w>
         <h>55</h>
       </geometry>
     </componentView>
+    <note color="-2079" content="On a vrmt besoin de ca ? a voir">
+      <noteGeometry>
+        <x>100</x>
+        <y>620</y>
+        <w>150</w>
+        <h>45</h>
+      </noteGeometry>
+    </note>
   </umlView>
 </classDiagram>
