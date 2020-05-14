@@ -22,15 +22,8 @@ int main(int argc, char *argv[]) {
         int vampiresNb = atoi(argv[4]);
 
         Field field = Field(width, height, humainsNb, vampiresNb);
+        field.displayGame();
 
-        /*
-        Displayer gameManager(width, height, humainsNb, vampiresNb);
-        gameManager.displayGameState();
-
-        for(Humanoid* h : gameManager._humanoids){
-            cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << endl;
-
-        }*/
 
     }
 

@@ -29,5 +29,11 @@ void Displayer::displayGame() const {
         std::cout << _leftRightBorderChar << std::endl;
     }
     std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
+
+    for(Humanoid* h : _field->getHumanoids()){
+        std::cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << std::endl;
+
+    }
+
 }
 

@@ -24,9 +24,19 @@ private:
     Displayer* _displayer;
 public:
     Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);
+
+    ~Field();
+
+    void displayGame() const;
+
     Humanoid* findNearest(Humanoid* h);
+
     Humanoid* getHumanoidByPosition();
+
     int nextTurn();
+
+
+    /* GETTERS */
 
     size_t getWidth() const;
 

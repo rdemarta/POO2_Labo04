@@ -31,26 +31,12 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     }
 }
 
-/* GETTERS */
-
-size_t Field::getWidth() const {
-    return _width;
+Field::~Field() {
+    delete _displayer;
 }
 
-size_t Field::getHeight() const {
-    return _height;
-}
-
-size_t Field::getHumainsNb() const {
-    return _humainsNb;
-}
-
-size_t Field::getVampiresNb() const {
-    return _vampiresNb;
-}
-
-const std::list<Humanoid *> &Field::getHumanoids() const {
-    return _humanoids;
+void Field::displayGame() const {
+    _displayer->displayGame();
 }
 
 Humanoid* Field::findNearest(Humanoid *h) {
@@ -77,4 +63,28 @@ int Field::nextTurn() {
         else
             ++it;
     return _turn++;
+}
+
+
+
+/* GETTERS */
+
+size_t Field::getWidth() const {
+    return _width;
+}
+
+size_t Field::getHeight() const {
+    return _height;
+}
+
+size_t Field::getHumainsNb() const {
+    return _humainsNb;
+}
+
+size_t Field::getVampiresNb() const {
+    return _vampiresNb;
+}
+
+const std::list<Humanoid *> &Field::getHumanoids() const {
+    return _humanoids;
 }
