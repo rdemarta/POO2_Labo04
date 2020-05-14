@@ -3,10 +3,12 @@
 //
 
 #include "Humanoid.hpp"
+#include "Action.hpp"
 
-Humanoid::Humanoid(size_t posX, size_t posY) : _posX(posX), _posY(posY), _isAlive(true) {}
+Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action) {}
 
 Humanoid::~Humanoid() {
+    delete _action;
 }
 
 size_t Humanoid::getPosX() const {
@@ -17,15 +19,10 @@ size_t Humanoid::getPosY() const {
     return _posY;
 }
 
-bool Humanoid::isAlive() {
+bool Humanoid::isAlive() const {
     return _isAlive;
 }
 
-
-void Humanoid::setAction(Field* f) {
-
-}
-
-void Humanoid::executeAction(Field* f) {
-
+Action *Humanoid::getAction() const {
+    return _action;
 }

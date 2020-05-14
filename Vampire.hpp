@@ -15,10 +15,14 @@ private:
     static const size_t _moveDistance = 1;
 
 public:
-    Vampire(size_t posX, size_t posY);
+    Vampire(size_t posX, size_t posY, Action* action);
 
     char getSymbol() const override;
     size_t getMoveDistance() const override;
+
+    void setAction(Field *f) const override;
+
+    void executeAction(Field *f) const override;
 
 };
 

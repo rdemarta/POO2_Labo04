@@ -22,19 +22,19 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     for(size_t i = 0; i < _humainsNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Humain(randX, randY));
+        _humanoids.push_back(new Humain(randX, randY, new Action));
     }
     // Fill all vampires with random position
     for(size_t i = 0; i < vampiresNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Vampire(randX, randY));
+        _humanoids.push_back(new Vampire(randX, randY, new Action));
     }
 
     // Add Buffy
     randX = rand() % (_width);
     randY = rand() % (_height);
-    _humanoids.push_back(new Buffy(randX, randY));
+    _humanoids.push_back(new Buffy(randX, randY, new Action));
 }
 
 Field::~Field() {

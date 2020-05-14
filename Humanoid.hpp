@@ -8,6 +8,7 @@
 
 #include <cstdlib>
 #include "Field.hpp"
+#include "Action.hpp"
 
 class Field;
 
@@ -17,19 +18,22 @@ private:
     size_t _posX;
     size_t _posY;
     bool _isAlive;
+    Action* _action;
 
 public:
-    Humanoid(size_t posX, size_t posY);
-    virtual ~Humanoid();
+    Humanoid(size_t posX, size_t posY, Action* action);
+    ~Humanoid();
 
-    bool isAlive();
-    void setAction(Field* f);
-    void executeAction(Field* f);
+    bool isAlive() const;
+    virtual void setAction(Field* f) const = 0;
+    virtual void executeAction(Field* f) const = 0;
     virtual char getSymbol() const = 0;
     virtual size_t getMoveDistance() const = 0;
 
     size_t getPosX() const;
     size_t getPosY() const;
+
+    Action *getAction() const;
 
 };
 

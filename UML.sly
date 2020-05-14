@@ -77,10 +77,10 @@
       <attribute const="false" defaultValue="" isStatic="false" name="_moveDistance" type="size_t" visibility="PRIVATE"/>
       <method isAbstract="true" isStatic="false" name="getSymbol" returnType="char" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="true" isStatic="false" name="setAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
       </method>
       <method isAbstract="true" isStatic="false" name="executeAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
       </method>
       <method isAbstract="true" isStatic="false" name="isAlive" returnType="bool" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="true" isStatic="false" name="getMoveDistance" returnType="size_t" view="DEFAULT" visibility="PUBLIC"/>
@@ -103,7 +103,10 @@
       <attribute const="false" defaultValue="" isStatic="true" name="attackSuccessRate" type="double" visibility="PRIVATE"/>
       <method isAbstract="false" isStatic="false" name="getSymbol" returnType="char" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="setAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="executeAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="f" type="Field*"/>
       </method>
     </entity>
     <entity entityType="CLASS" id="16263" isAbstract="true" name="Action" visibility="PUBLIC">
@@ -111,7 +114,7 @@
       <attribute const="false" defaultValue="" isStatic="false" name="nextY" type="size_t" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="nextAlive" type="bool" visibility="PRIVATE"/>
       <method isAbstract="false" isStatic="false" name="execute" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
       </method>
     </entity>
     <entity entityType="CLASS" id="16274" isAbstract="false" name="Buffy" visibility="PUBLIC">
@@ -120,7 +123,10 @@
       <attribute const="false" defaultValue="" isStatic="false" name="attackRange" type="size_t" visibility="PRIVATE"/>
       <method isAbstract="false" isStatic="false" name="getSymbol" returnType="char" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="setAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="executeAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="f" type="Field*"/>
       </method>
     </entity>
     <entity entityType="CLASS" id="16278" isAbstract="false" name="Human" visibility="PUBLIC">
@@ -128,7 +134,10 @@
       <attribute const="false" defaultValue="" isStatic="true" name="_moveDistance" type="size_t" visibility="PRIVATE"/>
       <method isAbstract="false" isStatic="false" name="getSymbol" returnType="char" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="setAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="f" type="Field&amp;"/>
+        <variable const="false" name="f" type="Field*"/>
+      </method>
+      <method isAbstract="false" isStatic="false" name="executeAction" returnType="void" view="DEFAULT" visibility="PUBLIC">
+        <variable const="false" name="f" type="Field*"/>
       </method>
     </entity>
     <entity entityType="CLASS" id="16689" isAbstract="false" name="Displayer" visibility="PUBLIC">
@@ -291,11 +300,11 @@
     <relationView color="-12566464" relationId="16280">
       <line>
         <point>
-          <x>501</x>
+          <x>481</x>
           <y>451</y>
         </point>
         <point>
-          <x>501</x>
+          <x>481</x>
           <y>431</y>
         </point>
         <point>
@@ -324,15 +333,15 @@
       <line>
         <point>
           <x>101</x>
-          <y>611</y>
+          <y>661</y>
         </point>
         <point>
           <x>101</x>
-          <y>581</y>
+          <y>621</y>
         </point>
         <point>
           <x>271</x>
-          <y>581</y>
+          <y>621</y>
         </point>
         <point>
           <x>271</x>
@@ -344,7 +353,7 @@
       <line>
         <point>
           <x>271</x>
-          <y>611</y>
+          <y>661</y>
         </point>
         <point>
           <x>271</x>
@@ -356,15 +365,15 @@
       <line>
         <point>
           <x>441</x>
-          <y>611</y>
+          <y>661</y>
         </point>
         <point>
           <x>441</x>
-          <y>581</y>
+          <y>621</y>
         </point>
         <point>
           <x>271</x>
-          <y>581</y>
+          <y>621</y>
         </point>
         <point>
           <x>271</x>
@@ -382,10 +391,10 @@
     </componentView>
     <componentView color="-2079" componentID="16278" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>420</x>
+        <x>400</x>
         <y>450</y>
-        <w>180</w>
-        <h>115</h>
+        <w>200</w>
+        <h>130</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16274" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -393,7 +402,7 @@
         <x>800</x>
         <y>450</y>
         <w>180</w>
-        <h>130</h>
+        <h>145</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16263" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -409,7 +418,7 @@
         <x>610</x>
         <y>450</y>
         <w>180</w>
-        <h>145</h>
+        <h>160</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16217" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -431,7 +440,7 @@
     <componentView color="-2079" componentID="17486" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>30</x>
-        <y>610</y>
+        <y>660</y>
         <w>150</w>
         <h>55</h>
       </geometry>
@@ -439,7 +448,7 @@
     <componentView color="-2079" componentID="17503" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>200</x>
-        <y>610</y>
+        <y>660</y>
         <w>150</w>
         <h>55</h>
       </geometry>
@@ -447,7 +456,7 @@
     <componentView color="-2079" componentID="17504" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>360</x>
-        <y>610</y>
+        <y>660</y>
         <w>150</w>
         <h>55</h>
       </geometry>
