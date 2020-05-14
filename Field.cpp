@@ -10,9 +10,9 @@
 using namespace std;
 
 Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
-    _width(width), _height(height),_humainsNb(humainsNb),_vampiresNb(vampiresNb)
+    _width(width), _height(height),_humainsNb(humainsNb),_vampiresNb(vampiresNb), _displayer(new Displayer(this))
 {
-
+    Displayer d(this);
     // Seed the random with current time to have all the time new random sequence
     srand((unsigned int)time(NULL));
 
@@ -53,9 +53,6 @@ const std::list<Humanoid *> &Field::getHumanoids() const {
     return _humanoids;
 }
 
-
-
-
 Humanoid* Field::findNearest(Humanoid *h) {
     return nullptr;
 }
@@ -65,15 +62,14 @@ Humanoid* Field::getHumanoidByPosition() {
 }
 
 int Field::nextTurn() {
-    /*
     // Déterminer les prochaines actions
-    for (list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
-        (*it)->setAction(*this);
+    for(list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
+        (*it)->setAction(this);
     // Executer les actions
-    for (list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
-        (*it)->executeAction(*this);
+    for(list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
+        (*it)->executeAction(this);
     // Enlever les humanoides tués
-    for (list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); )
+    for(list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); )
         if (!(*it)->isAlive()) {
             it = _humanoids.erase(it); // suppression de l’élément dans la liste
             delete *it; // destruction de l’humanoide référencé
@@ -81,6 +77,4 @@ int Field::nextTurn() {
         else
             ++it;
     return _turn++;
-     */
-    return 0;
 }

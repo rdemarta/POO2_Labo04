@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include "Field.hpp"
 
+class Field;
+
 class Humanoid {
 
 private:
@@ -18,10 +20,11 @@ private:
 
 public:
     Humanoid(size_t posX, size_t posY);
+    virtual ~Humanoid();
 
     bool isAlive();
-    //void setAction(Field* f);
-    //void executeAction(Field* f);
+    void setAction(Field* f);
+    void executeAction(Field* f);
     virtual char getSymbol() const = 0;
 
     size_t getPosX() const;

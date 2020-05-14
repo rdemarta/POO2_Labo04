@@ -6,6 +6,9 @@
 
 Humanoid::Humanoid(size_t posX, size_t posY) : _posX(posX), _posY(posY), _isAlive(true) {}
 
+Humanoid::~Humanoid() {
+}
+
 size_t Humanoid::getPosX() const {
     return _posX;
 }
@@ -18,7 +21,7 @@ bool Humanoid::isAlive() {
     return _isAlive;
 }
 
-/*
+
 void Humanoid::setAction(Field* f) {
 
 }
@@ -26,4 +29,3 @@ void Humanoid::setAction(Field* f) {
 void Humanoid::executeAction(Field* f) {
 
 }
-*/
