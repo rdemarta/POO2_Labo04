@@ -8,18 +8,35 @@
 
 #include <list>
 #include "Humanoid.hpp"
+#include "Displayer.hpp"
+
+class Displayer;
 
 class Field {
 
 private:
-    std::list<Humanoid*> humanoids;
+    size_t _width;
+    size_t _height;
+    size_t _humainsNb;
+    size_t _vampiresNb;
+    std::list<Humanoid*> _humanoids;
+    Displayer _displayer;
     int _turn;
-    size_t width;
-    size_t height;
 public:
+    Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);
     Humanoid* findNearest(Humanoid* h);
     Humanoid* getHumanoidByPosition();
     int nextTurn();
+
+    size_t getWidth() const;
+
+    size_t getHeight() const;
+
+    size_t getHumainsNb() const;
+
+    size_t getVampiresNb() const;
+
+    const std::list<Humanoid *> &getHumanoids() const;
 
 };
 
