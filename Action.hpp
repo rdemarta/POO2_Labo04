@@ -9,6 +9,8 @@
 #include <glob.h>
 #include "Field.hpp"
 
+class Field;
+
 class Action {
 
 private:

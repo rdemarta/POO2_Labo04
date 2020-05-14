@@ -11,6 +11,7 @@
 #include "Action.hpp"
 
 class Field;
+class Action;
 
 class Humanoid {
 
