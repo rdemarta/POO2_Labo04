@@ -33,6 +33,8 @@ public:
 
     size_t getPosX() const;
     size_t getPosY() const;
+    void setPosX(size_t posX);
+    void setPosY(size_t posY);
 
     Action *getAction() const;
 

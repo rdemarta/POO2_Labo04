@@ -20,7 +20,6 @@ public:
     char getSymbol() const override;
     size_t getMoveDistance() const override;
     void setAction(Field *f) const override;
-
     void executeAction(Field *f) const override;
 
 };

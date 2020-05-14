@@ -2,12 +2,17 @@
 // Created by loic on 5/13/20.
 //
 
+#include <iostream>
 #include "Humanoid.hpp"
 #include "Action.hpp"
 
-Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action) {}
+Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action) {
+    _action->setHumanoid(this);
+}
 
 Humanoid::~Humanoid() {
+    // Todo: Remove debug
+    std::cout << "Humanoid clear" << std::endl;
     delete _action;
 }
 
@@ -25,4 +30,12 @@ bool Humanoid::isAlive() const {
 
 Action *Humanoid::getAction() const {
     return _action;
+}
+
+void Humanoid::setPosX(size_t posX) {
+    _posX = posX;
+}
+
+void Humanoid::setPosY(size_t posY) {
+    _posY = posY;
 }

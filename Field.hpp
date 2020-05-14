@@ -36,6 +36,8 @@ public:
 
     int nextTurn();
 
+    void clearHumanoids() const;
+
 
     /* GETTERS */
 
@@ -48,6 +50,8 @@ public:
     size_t getVampiresNb() const;
 
     const std::list<Humanoid *> &getHumanoids() const;
+
+    int getTurn() const;
 
 };
 

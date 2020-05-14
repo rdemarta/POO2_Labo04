@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <climits>
 #include "Displayer.hpp"
 #include "Humain.hpp"
 #include "Vampire.hpp"
@@ -30,10 +31,45 @@ void Displayer::displayGame() const {
     }
     std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
 
+    askForCommand();
+
     // Display debug humanoids coord
+    /*
     for(Humanoid* h : _field->getHumanoids()){
         std::cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << std::endl;
     }
-
+    */
 }
 
+
+void Displayer::askForCommand() const {
+    char c;
+
+    std::cout << "[" << _field->getTurn() << "] q)uit s)tatistic n)ext: ";
+    std::cin >> c;
+
+    switch(c) {
+        case _quitChar:
+            _field->clearHumanoids();
+            break;
+        case _nextChar:
+            _field->nextTurn();
+            displayGame();
+            break;
+        case _statsChar:
+            // Todo: do stats
+            break;
+        default:
+            // Clear the cin buffer in case of user typed more than 1 char
+            std::cin.clear();
+            std::cin.ignore(INT_MAX, '\n');
+            // Re-ask a command
+            askForCommand();
+            break;
+    }
+}
+
+Displayer::~Displayer() {
+    // Todo: Remove debug
+    std::cout << "Displayer clear" << std::endl;
+}

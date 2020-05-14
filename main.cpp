@@ -21,10 +21,9 @@ int main(int argc, char *argv[]) {
         int humainsNb = atoi(argv[3]);
         int vampiresNb = atoi(argv[4]);
 
+
         Field field = Field(width, height, humainsNb, vampiresNb);
         field.displayGame();
-
-
     }
 
     return 0;

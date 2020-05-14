@@ -18,11 +18,18 @@ private:
     const char _cornerBorderChar = '+';
     const char _upDownBorderChar = '-';
     const char _leftRightBorderChar = '|';
+    static constexpr char _quitChar = 'q';
+    static constexpr char _nextChar = 'n';
+    static constexpr char _statsChar = 's';
 
 public:
     Displayer(Field* field);
+    ~Displayer();
 
     void displayGame() const;
+
+private:
+    void askForCommand() const;
 };
 
 

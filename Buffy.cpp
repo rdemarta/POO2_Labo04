@@ -15,9 +15,10 @@ size_t Buffy::getMoveDistance() const {
 }
 
 void Buffy::setAction(Field *f) const {
-
+    getAction()->setNextX(getPosX() + 1);
+    getAction()->setNextY(getPosY() + 1);
 }
 
 void Buffy::executeAction(Field *f) const {
-
+    getAction()->execute(f);
 }

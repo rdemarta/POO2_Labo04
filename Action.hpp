@@ -10,6 +10,7 @@
 #include "Field.hpp"
 
 class Field;
+class Humanoid;
 
 class Action {
 
@@ -17,10 +18,11 @@ private:
     size_t _nextX;
     size_t _nextY;
     bool _nextAlive;
+    Humanoid* _humanoid;
 
 public:
     Action();
-
+    ~Action();
 
     void execute(Field* field) const;
 
@@ -36,6 +38,8 @@ public:
     bool getNextAlive() const;
 
     void setNextAlive(bool nextAlive);
+
+    void setHumanoid(Humanoid* humanoid);
 
 public:
 

@@ -3,6 +3,7 @@
 //
 
 #include <time.h>
+#include <iostream>
 #include "Humain.hpp"
 #include "Vampire.hpp"
 #include "Field.hpp"
@@ -13,7 +14,6 @@ using namespace std;
 Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     _width(width), _height(height),_humainsNb(humainsNb),_vampiresNb(vampiresNb), _displayer(new Displayer(this))
 {
-    Displayer d(this);
     // Seed the random with current time to have all the time new random sequence
     srand((unsigned int)time(NULL));
 
@@ -35,9 +35,12 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     randX = rand() % (_width);
     randY = rand() % (_height);
     _humanoids.push_back(new Buffy(randX, randY, new Action));
+
 }
 
 Field::~Field() {
+    // Todo: Remove debug
+    std::cout << "Field clear" << std::endl;
     delete _displayer;
 }
 
@@ -72,6 +75,13 @@ int Field::nextTurn() {
 }
 
 
+void Field::clearHumanoids() const {
+    for(Humanoid* humanoid : _humanoids){
+        delete humanoid;
+    }
+}
+
+
 
 /* GETTERS */
 
@@ -94,3 +104,8 @@ size_t Field::getVampiresNb() const {
 const std::list<Humanoid *> &Field::getHumanoids() const {
     return _humanoids;
 }
+
+int Field::getTurn() const {
+    return _turn;
+}
+

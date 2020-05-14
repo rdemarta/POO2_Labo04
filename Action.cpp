@@ -2,12 +2,20 @@
 // Created by loic on 5/14/20.
 //
 
+#include <iostream>
 #include "Action.hpp"
 
 Action::Action() {}
 
-void Action::execute(Field *field) const {
+Action::~Action() {
+    // Todo: Remove debug
+    std::cout << "Action clear" << std::endl;
+}
 
+
+void Action::execute(Field *field) const {
+    _humanoid->setPosX(_nextX);
+    _humanoid->setPosY(_nextY);
 }
 
 size_t Action::getNextX() const {
@@ -32,4 +40,8 @@ bool Action::getNextAlive() const {
 
 void Action::setNextAlive(bool nextAlive) {
     _nextAlive = nextAlive;
+}
+
+void Action::setHumanoid(Humanoid *humanoid) {
+    _humanoid = humanoid;
 }
