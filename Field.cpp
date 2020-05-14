@@ -6,6 +6,7 @@
 #include "Humain.hpp"
 #include "Vampire.hpp"
 #include "Field.hpp"
+#include "Buffy.hpp"
 
 using namespace std;
 
@@ -29,6 +30,11 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
         randY = rand() % (_height);
         _humanoids.push_back(new Vampire(randX, randY));
     }
+
+    // Add Buffy
+    randX = rand() % (_width);
+    randY = rand() % (_height);
+    _humanoids.push_back(new Buffy(randX, randY));
 }
 
 Field::~Field() {
