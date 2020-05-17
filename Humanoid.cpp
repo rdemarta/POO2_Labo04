@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/13/20.
-//
+/**
+ * File: Humanoid.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #include <iostream>
 #include "Humanoid.hpp"

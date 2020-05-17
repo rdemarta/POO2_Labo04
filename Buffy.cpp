@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/14/20.
-//
+/**
+ * File: Buffy.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #include "Buffy.hpp"
 

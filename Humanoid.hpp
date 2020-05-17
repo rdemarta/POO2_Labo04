@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/13/20.
-//
+/**
+ * File: Humanoid.hpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #ifndef POO2_LABO04_HUMANOID_HPP
 #define POO2_LABO04_HUMANOID_HPP

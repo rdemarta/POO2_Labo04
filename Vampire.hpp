@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/13/20.
-//
+/**
+ * File: Vampire.hpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #ifndef POO2_LABO04_VAMPIRE_HPP
 #define POO2_LABO04_VAMPIRE_HPP

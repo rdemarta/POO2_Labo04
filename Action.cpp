@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/14/20.
-//
+/**
+ * File: Action.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #include <iostream>
 #include "Action.hpp"
