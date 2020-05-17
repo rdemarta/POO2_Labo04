@@ -39,3 +39,7 @@ void Humanoid::setPosX(size_t posX) {
 void Humanoid::setPosY(size_t posY) {
     _posY = posY;
 }
+
+Action* Humanoid::getAction() {
+    return _action;
+}

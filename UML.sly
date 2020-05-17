@@ -88,7 +88,7 @@
     <entity entityType="CLASS" id="16217" isAbstract="false" name="Field" visibility="PUBLIC">
       <attribute const="false" defaultValue="" isStatic="false" name="_width" type="size_t" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="_height" type="size_t" visibility="PRIVATE"/>
-      <attribute const="false" defaultValue="" isStatic="false" name="_humainsNb" type="size_t" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="_humansNb" type="size_t" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="_vampiresNb" type="size_t" visibility="PRIVATE"/>
       <method isAbstract="false" isStatic="false" name="findNearest" returnType="Humanoid*" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="h" type="Humanoid*"/>

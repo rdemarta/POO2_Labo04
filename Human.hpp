@@ -2,20 +2,20 @@
 // Created by loic on 5/13/20.
 //
 
-#ifndef POO2_LABO04_HUMAIN_HPP
-#define POO2_LABO04_HUMAIN_HPP
+#ifndef POO2_LABO04_HUMAN_HPP
+#define POO2_LABO04_HUMAN_HPP
 
 
 #include "Humanoid.hpp"
 
-class Humain : public Humanoid{
+class Human : public Humanoid{
 
 private:
     static const char _symbol = 'h';
     static const size_t _moveDistance = 1;
 
 public:
-    Humain(size_t posX, size_t posY, Action* action);
+    Human(size_t posX, size_t posY, Action* action);
 
     char getSymbol() const override;
     size_t getMoveDistance() const override;
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //POO2_LABO04_HUMAIN_HPP
+#endif //POO2_LABO04_HUMAN_HPP

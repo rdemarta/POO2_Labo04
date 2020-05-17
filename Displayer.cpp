@@ -8,7 +8,7 @@
 #include <iomanip>
 #include <climits>
 #include "Displayer.hpp"
-#include "Humain.hpp"
+#include "Human.hpp"
 #include "Vampire.hpp"
 
 
@@ -19,7 +19,7 @@ void Displayer::displayGame() const {
     for(size_t y = 0; y < _field->getHeight(); ++y){
         std::cout << _leftRightBorderChar;
         for(size_t x = 0; x < _field->getWidth(); ++x){
-            char charToDisplay = ' ';
+            char charToDisplay = '.'; // TODO set to ' ' (as '.' is for debugging)
             for(Humanoid* humanoid: _field->getHumanoids()){
                 if(humanoid->getPosX() == x && humanoid->getPosY() == y){
                     charToDisplay = humanoid->getSymbol();

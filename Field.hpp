@@ -17,7 +17,7 @@ class Field {
 private:
     size_t _width;
     size_t _height;
-    size_t _humainsNb;
+    size_t _humansNb;
     size_t _vampiresNb;
     std::list<Humanoid*> _humanoids;
     int _turn;
@@ -30,7 +30,7 @@ public:
 
     void displayGame() const;
 
-    Humanoid* findNearest(Humanoid* h);
+    Humanoid* findNearest(Humanoid* h, char targetSymbol);
 
     Humanoid* getHumanoidByPosition();
 
@@ -45,7 +45,7 @@ public:
 
     size_t getHeight() const;
 
-    size_t getHumainsNb() const;
+    size_t getHumansNb() const;
 
     size_t getVampiresNb() const;
 
@@ -53,6 +53,15 @@ public:
 
     int getTurn() const;
 
+private:
+
+    /**
+     * Calculates the absolute value of the difference between two unsigned integers.
+     * @param dist1
+     * @param dist2
+     * @return absolute value of the difference
+     */
+    static size_t distanceDifference(size_t dist1, size_t dist2);
 };
 
 

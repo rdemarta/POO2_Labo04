@@ -4,7 +4,10 @@
 
 #include <time.h>
 #include <iostream>
-#include "Humain.hpp"
+#include <cmath>
+#include <cstdint>
+#include <limits>
+#include "Human.hpp"
 #include "Vampire.hpp"
 #include "Field.hpp"
 #include "Buffy.hpp"
@@ -12,17 +15,17 @@
 using namespace std;
 
 Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
-    _width(width), _height(height),_humainsNb(humainsNb),_vampiresNb(vampiresNb), _displayer(new Displayer(this))
+        _width(width), _height(height), _humansNb(humainsNb), _vampiresNb(vampiresNb), _turn(0), _displayer(new Displayer(this))
 {
     // Seed the random with current time to have all the time new random sequence
     srand((unsigned int)time(NULL));
 
     size_t randX, randY;
     // Fill all humains with random position
-    for(size_t i = 0; i < _humainsNb; ++i){
+    for(size_t i = 0; i < _humansNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Humain(randX, randY, new Action));
+        _humanoids.push_back(new Human(randX, randY, new Action));
     }
     // Fill all vampires with random position
     for(size_t i = 0; i < vampiresNb; ++i){
@@ -36,6 +39,9 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     randY = rand() % (_height);
     _humanoids.push_back(new Buffy(randX, randY, new Action));
 
+    // TODO remove test zone bellow
+    // Nearest human from Buffy
+    Humanoid* nearestHumanFromBuffy = findNearest(_humanoids.back(), 'h');
 }
 
 Field::~Field() {
@@ -48,8 +54,27 @@ void Field::displayGame() const {
     _displayer->displayGame();
 }
 
-Humanoid* Field::findNearest(Humanoid *h) {
-    return nullptr;
+Humanoid* Field::findNearest(Humanoid* h, char targetSymbol) {
+    Humanoid* nearest = nullptr;
+    size_t bestDist = numeric_limits<int>::max();
+
+    for(Humanoid* targetH : _humanoids) {
+        if(targetH->getSymbol() == targetSymbol) {
+            // Floored hypotenuse gives the shortest path (unit = cell)
+            size_t deltaX = distanceDifference(h->getPosX(), targetH->getPosX());
+            size_t deltaY = distanceDifference(h->getPosY(), targetH->getPosY());
+            size_t cellDist = (size_t)(hypot(deltaX, deltaY));
+
+            if(cellDist < bestDist) {
+                nearest = targetH;
+                bestDist = cellDist;
+            }
+        }
+    }
+
+    cout << "##### Nearest: (" << nearest->getPosX() << ";" << nearest->getPosY() << ") dist=" << bestDist << " #####" << endl;
+
+    return nearest;
 }
 
 Humanoid* Field::getHumanoidByPosition() {
@@ -93,8 +118,8 @@ size_t Field::getHeight() const {
     return _height;
 }
 
-size_t Field::getHumainsNb() const {
-    return _humainsNb;
+size_t Field::getHumansNb() const {
+    return _humansNb;
 }
 
 size_t Field::getVampiresNb() const {
@@ -107,5 +132,11 @@ const std::list<Humanoid *> &Field::getHumanoids() const {
 
 int Field::getTurn() const {
     return _turn;
+}
+
+/* PRIVATE METHODS */
+
+size_t Field::distanceDifference(size_t dist1, size_t dist2) {
+    return dist1 > dist2 ? dist1 - dist2 : dist2 - dist1;
 }
 
