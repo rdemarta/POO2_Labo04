@@ -17,17 +17,21 @@ void ChaseAndKillHumanoidAction::chaseHumanoid(Humanoid* nearestTarget) {
     }
     // No attack possible, chase our target
     else {
-        // TODO refactor to private method?
         // X and Y position diffence
         int deltaX = (int) nearestTarget->getPosX() - (int) getHumanoid()->getPosX();
         int deltaY = (int) nearestTarget->getPosY() - (int) getHumanoid()->getPosY();
         // Actual move distance
-        int moveOffsetX = deltaX == 0 ? 0 : deltaX > 0 ? (int) getHumanoid()->getMoveDistance()
-                                                       : (int) -getHumanoid()->getMoveDistance();
-        int moveOffsetY = deltaY == 0 ? 0 : deltaY > 0 ? (int) getHumanoid()->getMoveDistance()
-                                                       : (int) -getHumanoid()->getMoveDistance();
+        int moveOffsetX = deltaToOffset(getHumanoid()->getMoveDistance(), deltaX);
+        int moveOffsetY = deltaToOffset(getHumanoid()->getMoveDistance(), deltaY);
         // Set the future coordinates
         setNextX(getHumanoid()->getPosX() + (size_t) moveOffsetX);
         setNextY(getHumanoid()->getPosY() + (size_t) moveOffsetY);
     }
+}
+
+int ChaseAndKillHumanoidAction::deltaToOffset(size_t moveDistance, int delta) {
+    if(delta == 0) return 0;
+
+    int direction = delta > 0 ? 1 : -1;
+    return direction * std::min((int)moveDistance, delta * direction);
 }
