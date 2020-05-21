@@ -4,7 +4,6 @@
  * Date: 30.04.2020
  */
 
-#include <iostream>
 #include "Vampire.hpp"
 #include "ChaseAndKillHumanoidAction.hpp"
 

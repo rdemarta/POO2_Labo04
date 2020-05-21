@@ -57,3 +57,22 @@ void Action::setHumanoid(Humanoid *humanoid) {
     _nextX = _humanoid->getPosX();
     _nextY = _humanoid->getPosY();
 }
+
+void Action::headTowardsPoint(size_t x, size_t y) {
+    int deltaX = (int) x - (int) getHumanoid()->getPosX();
+    int deltaY = (int) y - (int) getHumanoid()->getPosY();
+    // Actual move distance
+    int moveOffsetX = deltaToOffset(getHumanoid()->getMoveDistance(), deltaX);
+    int moveOffsetY = deltaToOffset(getHumanoid()->getMoveDistance(), deltaY);
+    // Set the future coordinates
+    setNextX(getHumanoid()->getPosX() + (size_t) moveOffsetX);
+    setNextY(getHumanoid()->getPosY() + (size_t) moveOffsetY);
+
+}
+
+int Action::deltaToOffset(size_t moveDistance, int delta) {
+    if(delta == 0) return 0;
+
+    int direction = delta > 0 ? 1 : -1;
+    return direction * std::min((int)moveDistance, delta * direction);
+}
