@@ -11,9 +11,10 @@
 #include "Action.hpp"
 
 class ChaseAndKillHumanoidAction : public Action {
+    char _targetSymbol;
 
 public:
-    ChaseAndKillHumanoidAction();
+    ChaseAndKillHumanoidAction(char targetSymbol);
 
     void set(Field* field) override;
     void execute(Field* field) const override;

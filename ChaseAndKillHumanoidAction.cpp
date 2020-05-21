@@ -6,10 +6,10 @@
 
 #include "ChaseAndKillHumanoidAction.hpp"
 
-ChaseAndKillHumanoidAction::ChaseAndKillHumanoidAction() {}
+ChaseAndKillHumanoidAction::ChaseAndKillHumanoidAction(char targetSymbol) : _targetSymbol(targetSymbol) {}
 
 void ChaseAndKillHumanoidAction::set(Field* f) {
-    Humanoid* nearestHuman = f->findNearest(getHumanoid(), 'h');
+    Humanoid* nearestHuman = f->findNearest(getHumanoid(), _targetSymbol);
 
     // Check if vampire can attack from where he currently is
     size_t distanceFromNearest = Field::distanceBetween(getHumanoid(), nearestHuman);

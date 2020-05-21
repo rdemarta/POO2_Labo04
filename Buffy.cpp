@@ -4,8 +4,8 @@
  * Date: 30.04.2020
  */
 
+#include <iostream>
 #include "Buffy.hpp"
-#include "ChaseAndKillHumanoidAction.hpp"
 
 Buffy::Buffy(size_t posX, size_t posY, Action* action) : Humanoid(posX, posY, action) {}
 
@@ -18,7 +18,9 @@ size_t Buffy::getMoveDistance() const {
 }
 
 void Buffy::setAction(Field* f) const {
-    getAction()->set(f);
+    if(f->getVampiresNb() > 0) {
+        getAction()->set(f);
+    }
 }
 
 void Buffy::executeAction(Field *f) const {

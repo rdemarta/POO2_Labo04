@@ -68,6 +68,7 @@ public:
 
     void decrementHumansNb();
     void incrementVampiresNb();
+    void decrementVampiresNb();
 
 private:
 

@@ -13,8 +13,6 @@ void ActionWander::set(Field* field) {
     size_t randomX = rand() % field->getWidth() - 1;
     size_t randomY = rand() % field->getHeight() - 1;
 
-    std::cout << "Going to (" << randomX << ";" << randomY << ")";
-
     Action::headTowardsPoint(randomX, randomY);
 }
 
