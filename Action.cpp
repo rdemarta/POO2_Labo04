@@ -44,6 +44,10 @@ void Action::setNextAlive(bool nextAlive) {
     _nextAlive = nextAlive;
 }
 
+Humanoid *Action::getHumanoid() const {
+    return _humanoid;
+}
+
 void Action::setHumanoid(Humanoid *humanoid) {
     _humanoid = humanoid;
 }

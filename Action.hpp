@@ -41,6 +41,8 @@ public:
 
     void setNextAlive(bool nextAlive);
 
+    Humanoid *getHumanoid() const;
+
     void setHumanoid(Humanoid* humanoid);
 
 public:
