@@ -5,7 +5,6 @@
  */
 
 #include "Vampire.hpp"
-#include "ChaseAndKillHumanoidAction.hpp"
 
 using namespace  std;
 
@@ -20,10 +19,8 @@ size_t Vampire::getMoveDistance() const {
 }
 
 void Vampire::setAction(Field* f) const {
-    // Vampire chase humans only if there is one or more, otherwise he waits
     if(f->getHumansNb() > 0){
-        Humanoid *nearestHuman = f->findNearest(this, 'h');
-        ((ChaseAndKillHumanoidAction *) getAction())->chaseHumanoid(nearestHuman);
+        getAction()->set(f);
     }
 }
 

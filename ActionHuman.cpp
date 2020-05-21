@@ -7,9 +7,13 @@
 #include "Vampire.hpp"
 #include "ChaseAndKillHumanoidAction.hpp"
 
+void ActionHuman::set(Field* field) {
+    ActionWander::set(field);
+}
+
 void ActionHuman::execute(Field* field) const {
     // Don't forget to call the parent execute method before (because it will be set the next isAlive)
-    Action::execute(field);
+    ActionWander::execute(field);
 
     // A human can only be killed by a vampire, so here we try
     if(!getNextAlive()) {

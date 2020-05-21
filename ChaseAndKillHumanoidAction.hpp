@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/21/20.
-//
+/**
+ * File: ChaseAndKillHumanoidAction.hpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #ifndef POO2_LABO04_CHASEANDKILLHUMANOIDACTION_HPP
 #define POO2_LABO04_CHASEANDKILLHUMANOIDACTION_HPP
@@ -12,7 +14,9 @@ class ChaseAndKillHumanoidAction : public Action {
 
 public:
     ChaseAndKillHumanoidAction();
-    void chaseHumanoid(Humanoid* nearestTarget);
+
+    void set(Field* field) override;
+    void execute(Field* field) const override;
 };
 
 

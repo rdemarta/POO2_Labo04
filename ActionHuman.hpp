@@ -7,10 +7,12 @@
 
 
 #include "Action.hpp"
+#include "ActionWander.hpp"
 
-class ActionHuman : public Action {
+class ActionHuman : public ActionWander {
 
 public:
+    void set(Field* field) override;
     void execute(Field* field) const override;
 };
 

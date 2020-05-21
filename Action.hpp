@@ -26,14 +26,21 @@ public:
     Action();
     ~Action();
 
+    /**
+     * Defines the next properties
+     * Must be overridden by subclasses in order to implement further actions
+     * @param field
+     */
+    virtual void set(Field* field) = 0;
+
+    /**
+     * Applies previously set properties
+     * May be overridden by subclasses in order to implement further actions
+     * @param field
+     */
     virtual void execute(Field* field) const;
 
-
-    size_t getNextX() const;
-
     void setNextX(size_t nextX);
-
-    size_t getNextY() const;
 
     void setNextY(size_t nextY);
 
@@ -65,7 +72,7 @@ private:
      * @param delta target distance/direction
      * @return
      */
-    int deltaToOffset(size_t moveDistance, int delta);
+    static int deltaToOffset(size_t moveDistance, int delta);
 };
 
 
