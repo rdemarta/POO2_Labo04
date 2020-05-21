@@ -20,8 +20,11 @@ size_t Vampire::getMoveDistance() const {
 }
 
 void Vampire::setAction(Field* f) const {
-    Humanoid *nearestHuman = f->findNearest(this, 'h');
-    ((ChaseAndKillHumanoidAction *) getAction())->chaseHumanoid(nearestHuman);
+    // Vampire chase humans only if there is one or more, otherwise he waits
+    if(f->getHumansNb() > 0){
+        Humanoid *nearestHuman = f->findNearest(this, 'h');
+        ((ChaseAndKillHumanoidAction *) getAction())->chaseHumanoid(nearestHuman);
+    }
 }
 
 void Vampire::executeAction(Field *f) const {

@@ -65,6 +65,10 @@ public:
 
     int getTurn() const;
 
+
+    void decrementHumansNb();
+    void incrementVampiresNb();
+
 private:
 
     /**

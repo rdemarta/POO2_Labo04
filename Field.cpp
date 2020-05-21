@@ -142,9 +142,19 @@ int Field::getTurn() const {
     return _turn;
 }
 
+
+
+void Field::decrementHumansNb() {
+    --_humansNb;
+}
+
+void Field::incrementVampiresNb() {
+    ++_vampiresNb;
+}
+
+
 /* PRIVATE METHODS */
 
 size_t Field::distanceDifference(size_t dist1, size_t dist2) {
     return dist1 > dist2 ? dist1 - dist2 : dist2 - dist1;
 }
-

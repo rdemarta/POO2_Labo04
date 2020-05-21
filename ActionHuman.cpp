@@ -13,11 +13,14 @@ void ActionHuman::execute(Field* field) const {
 
     // A human can only be killed by a vampire, so here we try
     if(!getNextAlive()) {
+        // We die
+        field->decrementHumansNb();
         // 1/2 chance to create a new vampire
         srand((unsigned int)time(NULL));
         if(rand() % 2){
             Humanoid* newVampire = new Vampire(getHumanoid()->getPosX(), getHumanoid()->getPosY(), new ChaseAndKillHumanoidAction);
             field->addHumanoid(newVampire);
+            field->incrementVampiresNb();
         }
     }
 }
