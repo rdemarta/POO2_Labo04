@@ -1,6 +1,8 @@
-//
-// Created by robin on 21.05.20.
-//
+/**
+ * File: ActionHuman.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
 #include <ctime>
 #include "ActionHuman.hpp"

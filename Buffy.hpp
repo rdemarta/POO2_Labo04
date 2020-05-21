@@ -12,11 +12,15 @@
 
 class Buffy : public Humanoid{
 private:
+    Action* _idleAction;
+
     static const char _symbol = 'B';
     static const size_t _moveDistance = 2;
 
 public:
-    Buffy(size_t posX, size_t posY, Action* action);
+    Buffy(size_t posX, size_t posY, Action* action, Action* idleAction);
+
+    virtual ~Buffy();
 
     char getSymbol() const override;
     size_t getMoveDistance() const override;

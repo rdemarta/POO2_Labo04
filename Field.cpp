@@ -40,7 +40,7 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     // Add Buffy
     randX = rand() % (_width);
     randY = rand() % (_height);
-    _humanoids.push_back(new Buffy(randX, randY, new ChaseAndKillHumanoidAction('v')));
+    _humanoids.push_back(new Buffy(randX, randY, new ChaseAndKillHumanoidAction('v'), new ActionWander));
 }
 
 Field::~Field() {
@@ -67,8 +67,6 @@ Humanoid* Field::findNearest(const Humanoid* h, char targetSymbol) {
             }
         }
     }
-
-    cout << "##### Nearest: (" << nearest->getPosX() << ";" << nearest->getPosY() << ") dist=" << bestDist << " #####" << endl;
 
     return nearest;
 }
