@@ -21,5 +21,5 @@ void Human::setAction(Field *f) const {
 }
 
 void Human::executeAction(Field *f) const {
-
+    getAction()->execute(f);
 }

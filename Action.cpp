@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Action.hpp"
 
-Action::Action() {}
+Action::Action() : _nextAlive(true) {}
 
 Action::~Action() {
     // Todo: Remove debug
@@ -18,6 +18,8 @@ Action::~Action() {
 void Action::execute(Field *field) const {
     _humanoid->setPosX(_nextX);
     _humanoid->setPosY(_nextY);
+    _humanoid->setIsAlive(_nextAlive);
+
 }
 
 size_t Action::getNextX() const {
@@ -50,4 +52,8 @@ Humanoid *Action::getHumanoid() const {
 
 void Action::setHumanoid(Humanoid *humanoid) {
     _humanoid = humanoid;
+    // Right after the humanoid set, set the nextX,Y
+    // otherwise the Humanoid will be teleport at 0,0
+    _nextX = _humanoid->getPosX();
+    _nextY = _humanoid->getPosY();
 }

@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include "Vampire.hpp"
-#include "ChaseHumanoidAction.hpp"
+#include "ChaseAndKillHumanoidAction.hpp"
 
 using namespace  std;
 
@@ -22,7 +22,7 @@ size_t Vampire::getMoveDistance() const {
 
 void Vampire::setAction(Field* f) const {
     Humanoid *nearestHuman = f->findNearest(this, 'h');
-    ((ChaseHumanoidAction *) getAction())->chaseHumanoid(nearestHuman);
+    ((ChaseAndKillHumanoidAction *) getAction())->chaseHumanoid(nearestHuman);
 }
 
 void Vampire::executeAction(Field *f) const {

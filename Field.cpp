@@ -12,7 +12,7 @@
 #include "Vampire.hpp"
 #include "Field.hpp"
 #include "Buffy.hpp"
-#include "ChaseHumanoidAction.hpp"
+#include "ChaseAndKillHumanoidAction.hpp"
 #include "ActionHuman.hpp"
 
 using namespace std;
@@ -34,7 +34,7 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     for(size_t i = 0; i < vampiresNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Vampire(randX, randY, new ChaseHumanoidAction));
+        _humanoids.push_back(new Vampire(randX, randY, new ChaseAndKillHumanoidAction));
     }
 
     // Add Buffy
@@ -87,8 +87,9 @@ int Field::nextTurn() {
     // Enlever les humanoides tués
     for(list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); )
         if (!(*it)->isAlive()) {
+            Humanoid* humanoidToDelete = *it;
             it = _humanoids.erase(it); // suppression de l’élément dans la liste
-            delete *it; // destruction de l’humanoide référencé
+            delete humanoidToDelete; // destruction de l’humanoide référencé
         }
         else
             ++it;
