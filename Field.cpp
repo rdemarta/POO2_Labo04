@@ -39,10 +39,6 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     randX = rand() % (_width);
     randY = rand() % (_height);
     _humanoids.push_back(new Buffy(randX, randY, new Action));
-
-    // TODO remove test zone bellow
-    // Nearest human from Buffy
-    Humanoid* nearestHumanFromBuffy = findNearest(_humanoids.back(), 'h');
 }
 
 Field::~Field() {
@@ -55,16 +51,13 @@ void Field::displayGame() const {
     _displayer->displayGame();
 }
 
-Humanoid* Field::findNearest(Humanoid* h, char targetSymbol) {
+Humanoid* Field::findNearest(const Humanoid* h, char targetSymbol) {
     Humanoid* nearest = nullptr;
     size_t bestDist = numeric_limits<int>::max();
 
     for(Humanoid* targetH : _humanoids) {
         if(targetH->getSymbol() == targetSymbol) {
-            // Floored hypotenuse gives the shortest path (unit = cell)
-            size_t deltaX = distanceDifference(h->getPosX(), targetH->getPosX());
-            size_t deltaY = distanceDifference(h->getPosY(), targetH->getPosY());
-            size_t cellDist = (size_t)(hypot(deltaX, deltaY));
+            size_t cellDist = distanceBetween(h, targetH);
 
             if(cellDist < bestDist) {
                 nearest = targetH;
@@ -105,6 +98,13 @@ void Field::clearHumanoids() const {
     for(Humanoid* humanoid : _humanoids){
         delete humanoid;
     }
+}
+
+size_t Field::distanceBetween(const Humanoid* h1, const Humanoid* h2) {
+    // Floored hypotenuse gives the shortest path (unit = cell)
+    size_t deltaX = distanceDifference(h1->getPosX(), h2->getPosX());
+    size_t deltaY = distanceDifference(h1->getPosY(), h2->getPosY());
+    return(size_t)(hypot(deltaX, deltaY));
 }
 
 

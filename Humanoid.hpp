@@ -18,7 +18,7 @@ class Action;
 class Humanoid {
 
 private:
-    size_t _posX;
+    size_t _posX; // TODO change type to int to facilitate coordinates calculations
     size_t _posY;
     bool _isAlive;
     Action* _action;

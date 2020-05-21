@@ -32,13 +32,21 @@ public:
 
     void displayGame() const;
 
-    Humanoid* findNearest(Humanoid* h, char targetSymbol);
+    Humanoid* findNearest(const Humanoid* h, char targetSymbol);
 
     Humanoid* getHumanoidByPosition();
 
     int nextTurn();
 
     void clearHumanoids() const;
+
+    /**
+     * Calculates absolute hypotenuse distance between two humanoids
+     * @param h1
+     * @param h2
+     * @return
+     */
+    static size_t distanceBetween(const Humanoid* h1, const Humanoid* h2);
 
 
     /* GETTERS */
