@@ -13,6 +13,7 @@
 #include "Field.hpp"
 #include "Buffy.hpp"
 #include "ChaseHumanoidAction.hpp"
+#include "ActionHuman.hpp"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     for(size_t i = 0; i < _humansNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Human(randX, randY, new Action));
+        _humanoids.push_back(new Human(randX, randY, new ActionHuman));
     }
     // Fill all vampires with random position
     for(size_t i = 0; i < vampiresNb; ++i){
@@ -99,6 +100,10 @@ void Field::clearHumanoids() const {
     for(Humanoid* humanoid : _humanoids){
         delete humanoid;
     }
+}
+
+void Field::addHumanoid(Humanoid* h) {
+    _humanoids.push_front(h);
 }
 
 size_t Field::distanceBetween(const Humanoid* h1, const Humanoid* h2) {

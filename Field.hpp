@@ -40,6 +40,8 @@ public:
 
     void clearHumanoids() const;
 
+    void addHumanoid(Humanoid* h);
+
     /**
      * Calculates absolute hypotenuse distance between two humanoids
      * @param h1

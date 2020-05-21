@@ -26,7 +26,7 @@ public:
     Action();
     ~Action();
 
-    void execute(Field* field) const;
+    virtual void execute(Field* field) const;
 
 
     size_t getNextX() const;

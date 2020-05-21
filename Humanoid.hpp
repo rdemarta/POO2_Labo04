@@ -40,9 +40,6 @@ public:
 
     Action *getAction() const;
 
-protected:
-    Action* getAction();
-
 };
 
 
