@@ -59,7 +59,6 @@ void Action::setHumanoid(Humanoid *humanoid) {
 }
 
 void Action::moveRandomly(Field* field) {
-    srand((unsigned int)time(NULL));
     size_t randomX = rand() % field->getWidth();
     size_t randomY = rand() % field->getHeight();
 
