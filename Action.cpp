@@ -10,8 +10,6 @@
 Action::Action() : _nextAlive(true) {}
 
 Action::~Action() {
-    // Todo: Remove debug
-    std::cout << "Action clear" << std::endl;
 }
 
 

@@ -21,6 +21,9 @@ int main(int argc, char *argv[]) {
         int humainsNb = atoi(argv[3]);
         int vampiresNb = atoi(argv[4]);
 
+        // Seed the random with current time to have all the time new random sequence
+        srand((unsigned int)time(NULL));
+
 
         Field field = Field(width, height, humainsNb, vampiresNb);
         field.displayGame();

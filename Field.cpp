@@ -5,7 +5,6 @@
  */
 
 #include <time.h>
-#include <iostream>
 #include <cmath>
 #include <limits>
 #include "Human.hpp"
@@ -20,9 +19,6 @@ using namespace std;
 Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
         _width(width), _height(height), _humansNb(humainsNb), _vampiresNb(vampiresNb), _turn(0), _displayer(new Displayer(this))
 {
-    // Seed the random with current time to have all the time new random sequence
-    srand((unsigned int)time(NULL));
-
     size_t randX, randY;
     // Fill all humains with random position
     for(size_t i = 0; i < _humansNb; ++i){
@@ -44,13 +40,18 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
 }
 
 Field::~Field() {
-    // Todo: Remove debug
-    std::cout << "Field clear" << std::endl;
     delete _displayer;
 }
 
 void Field::displayGame() const {
     _displayer->displayGame();
+}
+
+bool Field::autoRun() {
+    while(_vampiresNb != 0) { // Stop simulation only when there's no more vampires
+        nextTurn();
+    }
+    return _humansNb > 0;
 }
 
 Humanoid* Field::findNearest(const Humanoid* h, char targetSymbol) {
@@ -68,13 +69,7 @@ Humanoid* Field::findNearest(const Humanoid* h, char targetSymbol) {
         }
     }
 
-    cout << "##### Nearest: (" << nearest->getPosX() << ";" << nearest->getPosY() << ") dist=" << bestDist << " #####" << endl;
-
     return nearest;
-}
-
-Humanoid* Field::getHumanoidByPosition() {
-    return nullptr;
 }
 
 int Field::nextTurn() {

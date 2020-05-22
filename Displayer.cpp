@@ -33,11 +33,6 @@ void Displayer::displayGame() const {
     }
     std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
 
-    // Display debug humanoids coord
-    for(Humanoid* h : _field->getHumanoids()){
-        //std::cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << std::endl;
-    }
-
     askForCommand();
 }
 
@@ -56,9 +51,21 @@ void Displayer::askForCommand() const {
             _field->nextTurn();
             displayGame();
             break;
-        case _statsChar:
-            // Todo: do stats
+        case _statsChar: {
+            int buffyVictories = 0;
+
+            for(unsigned i = 0; i < gameNbPerSimulation; ++i) {
+                Field testingField(50, 50, 20, 10);
+                if(testingField.autoRun()) {
+                    ++buffyVictories;
+                }
+            }
+
+            double successRate = (double)(buffyVictories * 100) / gameNbPerSimulation;
+            std::cout << successRate << "% success" << std::endl;
+
             break;
+        }
         default:
             // Clear the cin buffer in case of user typed more than 1 char
             std::cin.clear();
@@ -70,6 +77,4 @@ void Displayer::askForCommand() const {
 }
 
 Displayer::~Displayer() {
-    // Todo: Remove debug
-    std::cout << "Displayer clear" << std::endl;
 }

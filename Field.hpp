@@ -32,9 +32,13 @@ public:
 
     void displayGame() const;
 
-    Humanoid* findNearest(const Humanoid* h, char targetSymbol);
+    /**
+     * Auto plays the full game and stops when there's no more vampire.
+     * @return true if a least one human remains.
+     */
+    bool autoRun();
 
-    Humanoid* getHumanoidByPosition();
+    Humanoid* findNearest(const Humanoid* h, char targetSymbol);
 
     int nextTurn();
 

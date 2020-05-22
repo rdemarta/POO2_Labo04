@@ -16,7 +16,6 @@ void ActionHuman::execute(Field* field) const {
         // We die
         field->decrementHumansNb();
         // 1/2 chance to create a new vampire
-        srand((unsigned int)time(NULL));
         if(rand() % 2){
             Humanoid* newVampire = new Vampire(getHumanoid()->getPosX(), getHumanoid()->getPosY(), new ChaseAndKillHumanoidAction);
             field->addHumanoid(newVampire);

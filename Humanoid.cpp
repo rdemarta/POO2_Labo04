@@ -13,8 +13,6 @@ Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _pos
 }
 
 Humanoid::~Humanoid() {
-    // Todo: Remove debug
-    std::cout << "Humanoid clear" << std::endl;
     delete _action;
 }
 

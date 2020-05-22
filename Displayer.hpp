@@ -13,8 +13,6 @@
 class Field;
 
 class Displayer {
-
-private:
     Field* _field;
 
     const char _cornerBorderChar = '+';
@@ -23,6 +21,7 @@ private:
     static constexpr char _quitChar = 'q';
     static constexpr char _nextChar = 'n';
     static constexpr char _statsChar = 's';
+    static const unsigned gameNbPerSimulation = 10000;
 
 public:
     Displayer(Field* field);
