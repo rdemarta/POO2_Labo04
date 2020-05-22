@@ -26,7 +26,7 @@ private:
     Displayer* _displayer;
 
 public:
-    Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb);
+    Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb);
 
     ~Field();
 

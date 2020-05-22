@@ -1,12 +1,14 @@
-//
-// Created by loic on 5/21/20.
-//
+/**
+ * File: ActionChaseAndKill.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 
-#include "ChaseAndKillHumanoidAction.hpp"
+#include "ActionChaseAndKill.hpp"
 
-ChaseAndKillHumanoidAction::ChaseAndKillHumanoidAction() {}
+ActionChaseAndKill::ActionChaseAndKill() {}
 
-void ChaseAndKillHumanoidAction::chaseHumanoid(Humanoid* nearestTarget) {
+void ActionChaseAndKill::chaseHumanoid(Humanoid* nearestTarget) {
     // Check if vampire can attack from where he currently is
     size_t distanceFromNearest = Field::distanceBetween(getHumanoid(), nearestTarget);
 

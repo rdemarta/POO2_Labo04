@@ -4,23 +4,23 @@
  * Date: 30.04.2020
  */
 
-#include <time.h>
+#include <ctime>
 #include <cmath>
 #include <limits>
 #include "Human.hpp"
 #include "Vampire.hpp"
 #include "Field.hpp"
 #include "Buffy.hpp"
-#include "ChaseAndKillHumanoidAction.hpp"
+#include "ActionChaseAndKill.hpp"
 #include "ActionHuman.hpp"
 
 using namespace std;
 
-Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
-        _width(width), _height(height), _humansNb(humainsNb), _vampiresNb(vampiresNb), _turn(0), _displayer(new Displayer(this))
+Field::Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb) :
+        _width(width), _height(height), _humansNb(humansNb), _vampiresNb(vampiresNb), _turn(0), _displayer(new Displayer(this))
 {
     size_t randX, randY;
-    // Fill all humains with random position
+    // Fill all humans with random position
     for(size_t i = 0; i < _humansNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
@@ -30,7 +30,7 @@ Field::Field(size_t width, size_t height, size_t humainsNb, size_t vampiresNb) :
     for(size_t i = 0; i < vampiresNb; ++i){
         randX = rand() % (_width);
         randY = rand() % (_height);
-        _humanoids.push_back(new Vampire(randX, randY, new ChaseAndKillHumanoidAction));
+        _humanoids.push_back(new Vampire(randX, randY, new ActionChaseAndKill));
     }
 
     // Add Buffy

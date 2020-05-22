@@ -29,11 +29,7 @@ public:
     virtual void execute(Field* field) const;
 
 
-    size_t getNextX() const;
-
     void setNextX(size_t nextX);
-
-    size_t getNextY() const;
 
     void setNextY(size_t nextY);
 

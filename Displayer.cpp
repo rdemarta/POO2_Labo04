@@ -4,14 +4,11 @@
  * Date: 30.04.2020
  */
 
-#include <time.h>
-#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <iomanip>
 #include <climits>
 #include "Displayer.hpp"
-#include "Human.hpp"
-#include "Vampire.hpp"
 
 
 Displayer::Displayer(Field* field) : _field(field) {}

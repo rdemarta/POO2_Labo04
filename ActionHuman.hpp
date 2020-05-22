@@ -1,7 +1,8 @@
-//
-// Created by robin on 21.05.20.
-//
-
+/**
+ * File: HumanAction.hpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 30.04.2020
+ */
 #ifndef POO2_LABO04_ACTIONHUMAN_HPP
 #define POO2_LABO04_ACTIONHUMAN_HPP
 

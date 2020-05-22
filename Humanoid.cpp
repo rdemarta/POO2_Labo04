@@ -4,9 +4,7 @@
  * Date: 30.04.2020
  */
 
-#include <iostream>
 #include "Humanoid.hpp"
-#include "Action.hpp"
 
 Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action) {
     _action->setHumanoid(this);

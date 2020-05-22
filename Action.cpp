@@ -4,7 +4,6 @@
  * Date: 30.04.2020
  */
 
-#include <iostream>
 #include "Action.hpp"
 
 Action::Action() : _nextAlive(true) {}
@@ -17,19 +16,10 @@ void Action::execute(Field *field) const {
     _humanoid->setPosX(_nextX);
     _humanoid->setPosY(_nextY);
     _humanoid->setIsAlive(_nextAlive);
-
-}
-
-size_t Action::getNextX() const {
-    return _nextX;
 }
 
 void Action::setNextX(size_t nextX) {
     _nextX = nextX;
-}
-
-size_t Action::getNextY() const {
-    return _nextY;
 }
 
 void Action::setNextY(size_t nextY) {

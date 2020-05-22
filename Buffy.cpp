@@ -5,7 +5,7 @@
  */
 
 #include "Buffy.hpp"
-#include "ChaseAndKillHumanoidAction.hpp"
+#include "ActionChaseAndKill.hpp"
 
 Buffy::Buffy(size_t posX, size_t posY, Action* action) : Humanoid(posX, posY, action) {}
 
@@ -20,7 +20,7 @@ size_t Buffy::getMoveDistance() const {
 void Buffy::setAction(Field *f) const {
     if(f->getVampiresNb() > 0){
         Humanoid *nearestVampire = f->findNearest(this, 'v');
-        ((ChaseAndKillHumanoidAction *) getAction())->chaseHumanoid(nearestVampire);
+        ((ActionChaseAndKill *) getAction())->chaseHumanoid(nearestVampire);
     }else{
         getAction()->moveRandomly(f);
     }
