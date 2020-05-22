@@ -59,8 +59,14 @@ void Action::setHumanoid(Humanoid *humanoid) {
 }
 
 void Action::moveRandomly(Field* field) {
-    size_t randomX = rand() % field->getWidth();
-    size_t randomY = rand() % field->getHeight();
+    size_t randomX;
+    size_t randomY;
+
+    // We don't want to be stuck in the same place
+    do{
+        randomX = rand() % field->getWidth();
+        randomY = rand() % field->getHeight();
+    }while(getHumanoid()->getPosX() == randomX && getHumanoid()->getPosY() == randomY);
 
     Action::headTowardsPoint(randomX, randomY);
 }
