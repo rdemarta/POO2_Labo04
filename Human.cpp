@@ -17,7 +17,7 @@ size_t Human::getMoveDistance() const {
 }
 
 void Human::setAction(Field *f) const {
-
+    getAction()->moveRandomly(f);
 }
 
 void Human::executeAction(Field *f) const {

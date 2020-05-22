@@ -45,6 +45,8 @@ public:
 
     void setHumanoid(Humanoid* humanoid);
 
+    void moveRandomly(Field* field);
+
 protected:
     /**
      * Sets next position to make humanoid head towards given coordinates
