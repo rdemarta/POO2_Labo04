@@ -28,5 +28,8 @@ void Vampire::setAction(Field* f) const {
 }
 
 void Vampire::executeAction(Field *f) const {
+    if(!getAction()->getNextAlive()){
+        f->decrementVampiresNb();
+    }
     getAction()->execute(f);
 }

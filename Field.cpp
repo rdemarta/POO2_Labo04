@@ -158,3 +158,7 @@ void Field::incrementVampiresNb() {
 size_t Field::distanceDifference(size_t dist1, size_t dist2) {
     return dist1 > dist2 ? dist1 - dist2 : dist2 - dist1;
 }
+
+void Field::decrementVampiresNb() {
+    --_vampiresNb;
+}

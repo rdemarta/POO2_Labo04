@@ -35,7 +35,7 @@ void Displayer::displayGame() const {
 
     // Display debug humanoids coord
     for(Humanoid* h : _field->getHumanoids()){
-        std::cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << std::endl;
+        //std::cout << h->getSymbol() << ": " << h->getPosX() << ";" << h->getPosY() << std::endl;
     }
 
     askForCommand();
