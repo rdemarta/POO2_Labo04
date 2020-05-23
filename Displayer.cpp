@@ -42,7 +42,6 @@ void Displayer::askForCommand() const {
 
     switch(c) {
         case _quitChar:
-            _field->clearHumanoids();
             break;
         case _nextChar:
             _field->nextTurn();
@@ -60,8 +59,6 @@ void Displayer::askForCommand() const {
 
             double successRate = (double)(buffyVictories * 100) / gameNbPerSimulation;
             std::cout << successRate << "% success" << std::endl;
-
-            // TODO : _field->clearHumanoids(); ? Quand est-il de la memire allouée dynamiquement dan testingField ou dans _field ?
 
             break;
         }

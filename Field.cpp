@@ -7,6 +7,7 @@
 #include <ctime>
 #include <cmath>
 #include <limits>
+#include <iostream>
 #include "Human.hpp"
 #include "Vampire.hpp"
 #include "Field.hpp"
@@ -41,6 +42,7 @@ Field::Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb) :
 
 Field::~Field() {
     delete _displayer;
+    clearHumanoids();
 }
 
 void Field::displayGame() const {
