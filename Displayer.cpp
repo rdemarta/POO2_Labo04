@@ -52,7 +52,7 @@ void Displayer::askForCommand() const {
             int buffyVictories = 0;
 
             for(unsigned i = 0; i < gameNbPerSimulation; ++i) {
-                Field testingField(50, 50, 20, 10);
+                Field testingField(50, 50, 10, 10);
                 if(testingField.autoRun()) {
                     ++buffyVictories;
                 }
@@ -60,6 +60,8 @@ void Displayer::askForCommand() const {
 
             double successRate = (double)(buffyVictories * 100) / gameNbPerSimulation;
             std::cout << successRate << "% success" << std::endl;
+
+            // TODO : _field->clearHumanoids(); ? Quand est-il de la memire allouée dynamiquement dan testingField ou dans _field ?
 
             break;
         }
