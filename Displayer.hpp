@@ -18,6 +18,7 @@ class Displayer {
     static const char CORNER_BORDER_CHAR = '+';
     static const char UP_DOWN_BORDER_CHAR = '-';
     static const char LEFT_RIGHT_BORDER_CHAR = '|';
+    // constexpr used to be able to use the char inside a switch case bloc 
     static constexpr char QUIT_CHAR = 'q';
     static constexpr char  NEXT_CHAR = 'n';
     static constexpr char STATS_CHAR = 's';
