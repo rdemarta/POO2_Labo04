@@ -18,7 +18,8 @@
 using namespace std;
 
 Field::Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb) :
-        _width(width), _height(height), _humansNb(humansNb), _vampiresNb(vampiresNb), _turn(0), _displayer(new Displayer(this))
+        _width(width), _height(height), _humansNb(humansNb), _vampiresNb(vampiresNb), _turn(0),
+        _displayer(new Displayer(this, humansNb, vampiresNb))
 {
     size_t randX, randY;
     // Fill all humans with random position

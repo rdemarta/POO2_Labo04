@@ -13,8 +13,12 @@ Action::~Action() {
 
 
 void Action::execute(Field *field) const {
-    _humanoid->setPosX(_nextX);
-    _humanoid->setPosY(_nextY);
+    // Update the new pos only if the human is still alive
+    // This way if we'll create a vampire, it will spawn at the initial human pos
+    if(_nextAlive){
+        _humanoid->setPosX(_nextX);
+        _humanoid->setPosY(_nextY);
+    }
     _humanoid->setIsAlive(_nextAlive);
 }
 

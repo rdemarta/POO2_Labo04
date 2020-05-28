@@ -14,18 +14,20 @@ class Field;
 
 class Displayer {
     Field* _field;
+    size_t _initialHumansNb;
+    size_t _initialVampiresNb;
 
     static const char CORNER_BORDER_CHAR = '+';
     static const char UP_DOWN_BORDER_CHAR = '-';
     static const char LEFT_RIGHT_BORDER_CHAR = '|';
-    // constexpr used to be able to use the char inside a switch case bloc 
+    // constexpr used to be able to use the char inside a switch case bloc
     static constexpr char QUIT_CHAR = 'q';
     static constexpr char  NEXT_CHAR = 'n';
     static constexpr char STATS_CHAR = 's';
     static const unsigned GAME_NB_PER_SIMULATION = 10000;
 
 public:
-    Displayer(Field* field);
+    Displayer(Field* field, size_t initialHumansNb, size_t initialVampiresNb);
     ~Displayer();
 
     void displayGame() const;

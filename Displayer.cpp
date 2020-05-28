@@ -11,7 +11,9 @@
 #include "Displayer.hpp"
 
 
-Displayer::Displayer(Field* field) : _field(field) {}
+Displayer::Displayer(Field* field, size_t initialHumansNb, size_t initialVampiresNb) :
+    _field(field), _initialHumansNb(initialHumansNb), _initialVampiresNb(initialVampiresNb)
+{}
 
 void Displayer::displayGame() const {
     std::cout << CORNER_BORDER_CHAR << std::setfill(UP_DOWN_BORDER_CHAR) << std::setw((int)_field->getWidth() + 1) << CORNER_BORDER_CHAR << std::endl;
@@ -51,7 +53,7 @@ void Displayer::askForCommand() const {
             int buffyVictories = 0;
 
             for(unsigned i = 0; i < GAME_NB_PER_SIMULATION; ++i) {
-                Field testingField(50, 50, 10, 10);
+                Field testingField(_field->getWidth(), _field->getHeight(), _initialHumansNb, _initialVampiresNb);
                 if(testingField.autoRun()) {
                     ++buffyVictories;
                 }
