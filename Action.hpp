@@ -24,7 +24,7 @@ private:
 
 public:
     Action();
-    ~Action();
+    virtual ~Action();
 
     virtual void execute(Field* field) const;
 

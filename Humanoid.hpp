@@ -25,7 +25,7 @@ private:
 
 public:
     Humanoid(size_t posX, size_t posY, Action* action);
-    ~Humanoid();
+    virtual ~Humanoid();
 
     bool isAlive() const;
     virtual void setAction(Field* f) const = 0;
