@@ -14,9 +14,9 @@
 Displayer::Displayer(Field* field) : _field(field) {}
 
 void Displayer::displayGame() const {
-    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
+    std::cout << CORNER_BORDER_CHAR << std::setfill(UP_DOWN_BORDER_CHAR) << std::setw((int)_field->getWidth() + 1) << CORNER_BORDER_CHAR << std::endl;
     for(size_t y = 0; y < _field->getHeight(); ++y){
-        std::cout << _leftRightBorderChar;
+        std::cout << LEFT_RIGHT_BORDER_CHAR;
         for(size_t x = 0; x < _field->getWidth(); ++x){
             char charToDisplay = '.'; // TODO set to ' ' (as '.' is for debugging)
             for(Humanoid* humanoid: _field->getHumanoids()){
@@ -26,9 +26,9 @@ void Displayer::displayGame() const {
             }
             std::cout << charToDisplay;
         }
-        std::cout << _leftRightBorderChar << std::endl;
+        std::cout << LEFT_RIGHT_BORDER_CHAR << std::endl;
     }
-    std::cout << _cornerBorderChar << std::setfill(_upDownBorderChar) << std::setw((int)_field->getWidth() + 1) << _cornerBorderChar << std::endl;
+    std::cout << CORNER_BORDER_CHAR << std::setfill(UP_DOWN_BORDER_CHAR) << std::setw((int)_field->getWidth() + 1) << CORNER_BORDER_CHAR << std::endl;
 
     askForCommand();
 }
@@ -41,23 +41,23 @@ void Displayer::askForCommand() const {
     std::cin >> c;
 
     switch(c) {
-        case _quitChar:
+        case QUIT_CHAR:
             break;
-        case _nextChar:
+        case NEXT_CHAR:
             _field->nextTurn();
             displayGame();
             break;
-        case _statsChar: {
+        case STATS_CHAR: {
             int buffyVictories = 0;
 
-            for(unsigned i = 0; i < gameNbPerSimulation; ++i) {
+            for(unsigned i = 0; i < GAME_NB_PER_SIMULATION; ++i) {
                 Field testingField(50, 50, 10, 10);
                 if(testingField.autoRun()) {
                     ++buffyVictories;
                 }
             }
 
-            double successRate = (double)(buffyVictories * 100) / gameNbPerSimulation;
+            double successRate = (double)(buffyVictories * 100) / GAME_NB_PER_SIMULATION;
             std::cout << successRate << "% success" << std::endl;
 
             break;
