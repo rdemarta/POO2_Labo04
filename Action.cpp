@@ -5,6 +5,7 @@
  */
 
 #include "Action.hpp"
+#include "UniformRandom.hpp"
 
 Action::Action() : _nextAlive(true) {}
 
@@ -56,8 +57,8 @@ void Action::moveRandomly(Field* field) {
 
     // We don't want to be stuck in the same place
     do{
-        randomX = rand() % field->getWidth();
-        randomY = rand() % field->getHeight();
+        randomX = (size_t)UniformRandom::getInstance().rand(0,(int)field->getWidth()-1);
+        randomY = (size_t)UniformRandom::getInstance().rand(0,(int)field->getHeight()-1);
     }while(getHumanoid()->getPosX() == randomX && getHumanoid()->getPosY() == randomY);
 
     Action::headTowardsPoint(randomX, randomY);

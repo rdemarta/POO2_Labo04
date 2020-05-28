@@ -14,6 +14,7 @@
 #include "Buffy.hpp"
 #include "ActionChaseAndKill.hpp"
 #include "ActionHuman.hpp"
+#include "UniformRandom.hpp"
 
 using namespace std;
 
@@ -24,20 +25,20 @@ Field::Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb) :
     size_t randX, randY;
     // Fill all humans with random position
     for(size_t i = 0; i < _humansNb; ++i){
-        randX = rand() % (_width);
-        randY = rand() % (_height);
+        randX = (size_t)UniformRandom::getInstance().rand(0,(int)_width-1);
+        randY = (size_t)UniformRandom::getInstance().rand(0,(int)_height-1);
         _humanoids.push_back(new Human(randX, randY, new ActionHuman));
     }
     // Fill all vampires with random position
     for(size_t i = 0; i < vampiresNb; ++i){
-        randX = rand() % (_width);
-        randY = rand() % (_height);
+        randX = (size_t)UniformRandom::getInstance().rand(0,(int)_width-1);
+        randY = (size_t)UniformRandom::getInstance().rand(0,(int)_height-1);
         _humanoids.push_back(new Vampire(randX, randY, new ActionChaseAndKill));
     }
 
     // Add Buffy
-    randX = rand() % (_width);
-    randY = rand() % (_height);
+    randX = (size_t)UniformRandom::getInstance().rand(0,(int)_width-1);
+    randY = (size_t)UniformRandom::getInstance().rand(0,(int)_height-1);
     _humanoids.push_back(new Buffy(randX, randY, new Action));
 }
 

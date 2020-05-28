@@ -7,6 +7,7 @@
 #include "ActionHuman.hpp"
 #include "Vampire.hpp"
 #include "ActionChaseAndKill.hpp"
+#include "UniformRandom.hpp"
 
 void ActionHuman::execute(Field* field) const {
     // Don't forget to call the parent execute method before (because it will be set the next isAlive)
@@ -17,7 +18,7 @@ void ActionHuman::execute(Field* field) const {
         // We die
         field->decrementHumansNb();
         // 1/2 chance to create a new vampire
-        if(rand() % 2){
+        if(UniformRandom::getInstance().rand(0,1)){
             Humanoid* newVampire = new Vampire(getHumanoid()->getPosX(), getHumanoid()->getPosY(), new ActionChaseAndKill);
             field->addHumanoid(newVampire);
             field->incrementVampiresNb();
