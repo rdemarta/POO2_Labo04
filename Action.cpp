@@ -13,8 +13,10 @@ Action::~Action() {
 
 
 void Action::execute(Field *field) const {
-    _humanoid->setPosX(_nextX);
-    _humanoid->setPosY(_nextY);
+    if(_nextAlive){
+        _humanoid->setPosX(_nextX);
+        _humanoid->setPosY(_nextY);
+    }
     _humanoid->setIsAlive(_nextAlive);
 }
 

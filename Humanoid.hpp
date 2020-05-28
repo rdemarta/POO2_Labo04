@@ -22,6 +22,8 @@ private:
     size_t _posY;
     bool _isAlive;
     Action* _action;
+    size_t _id;
+    static size_t _count;
 
 public:
     Humanoid(size_t posX, size_t posY, Action* action);
@@ -39,6 +41,10 @@ public:
     void setPosX(size_t posX);
     void setPosY(size_t posY);
     void setIsAlive(bool isAlive);
+
+    const size_t getId() const;
+
+    void setId(size_t id);
 
 };
 

@@ -6,7 +6,9 @@
 
 #include "Humanoid.hpp"
 
-Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action) {
+size_t Humanoid::_count = 0;
+
+Humanoid::Humanoid(size_t posX, size_t posY, Action* action) : _posX(posX), _posY(posY), _isAlive(true), _action(action), _id(Humanoid::_count++){
     _action->setHumanoid(this);
 }
 
@@ -40,4 +42,12 @@ void Humanoid::setPosY(size_t posY) {
 
 void Humanoid::setIsAlive(bool isAlive) {
     _isAlive = isAlive;
+}
+
+const size_t Humanoid::getId() const {
+    return _id;
+}
+
+void Humanoid::setId(size_t id) {
+    _id = id;
 }

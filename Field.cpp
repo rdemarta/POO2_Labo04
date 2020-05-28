@@ -90,6 +90,10 @@ int Field::nextTurn() {
         }
         else
             ++it;
+
+    std::cout << "Remaining Humans: " << _humansNb << std::endl;
+    std::cout << "Remaining Vampires: " << _vampiresNb << std::endl;
+
     return _turn++;
 }
 
