@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/28/20.
-//
+/**
+ * File: UniformRandom.hpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 28.05.2020
+ */
 
 #ifndef POO2_LABO04_UNIFORMRANDOM_HPP
 #define POO2_LABO04_UNIFORMRANDOM_HPP

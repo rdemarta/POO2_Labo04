@@ -1,6 +1,8 @@
-//
-// Created by loic on 5/28/20.
-//
+/**
+ * File: UniformRandom.cpp
+ * Authors: Robin Demarta & Loïc Dessaules
+ * Date: 28.05.2020
+ */
 
 #include <random>
 #include <chrono>
@@ -18,8 +20,9 @@ int UniformRandom::rand(int min, int max) {
 }
 
 UniformRandom &UniformRandom::getInstance() {
-    static UniformRandom INSTANCE;// Guaranteed to be destroyed.
     // Instantiated on first use.
+    static UniformRandom INSTANCE;// Guaranteed to be destroyed.
+
     return INSTANCE;
 }
 

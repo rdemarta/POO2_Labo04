@@ -16,13 +16,13 @@ int main(int argc, char *argv[]) {
         cout << "Error: 4 params needed" << endl;
         return EXIT_FAILURE;
     } else {
-        const size_t minWidth = 2;
-        const size_t minHumanoidType = 0;
+        const int minWidth = 2;
+        const int minHumanoidType = 0;
 
-        size_t width = (size_t)atoi(argv[1]);
-        size_t height = (size_t)atoi(argv[2]);
-        size_t humansNb = (size_t)atoi(argv[3]);
-        size_t vampiresNb = (size_t)atoi(argv[4]);
+        int width = atoi(argv[1]);
+        int height = atoi(argv[2]);
+        int humansNb = atoi(argv[3]);
+        int vampiresNb = atoi(argv[4]);
 
         // Check correct parameters
         if(width < minWidth || height < minWidth || humansNb < minHumanoidType || vampiresNb < minHumanoidType) {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
             return EXIT_FAILURE;
         }
 
-        Field field = Field(width, height, humansNb, vampiresNb);
+        Field field = Field((size_t)width, (size_t)height, (size_t)humansNb, (size_t)vampiresNb);
         field.displayGame();
     }
 
