@@ -28,5 +28,5 @@ int main(int argc, char *argv[]) {
         field.displayGame();
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
