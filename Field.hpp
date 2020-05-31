@@ -38,12 +38,29 @@ public:
      */
     bool autoRun();
 
+    /**
+     * Searches the nearest Humanoid (of given symbol)
+     * @param h Humanoid from which to search
+     * @param targetSymbol target type
+     * @return
+     */
     Humanoid* findNearest(const Humanoid* h, char targetSymbol);
 
+    /**
+     * Proceeds to apply Humanoids' Actions
+     * @return the current turn's number
+     */
     int nextTurn();
 
-    void clearHumanoids() const;
+    /**
+     * Deletes all Humanoids from the Field
+     */
+    void clearHumanoids();
 
+    /**
+     * Inserts an Humanoid into the list
+     * @param h Humanoid to insert
+     */
     void addHumanoid(Humanoid* h);
 
     /**

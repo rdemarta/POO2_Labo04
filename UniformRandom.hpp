@@ -22,8 +22,18 @@ public:
     UniformRandom(UniformRandom const&) = delete;
     void operator=(UniformRandom const&) = delete;
 
+    /**
+     * Get the unique instance of UniformRandom
+     * @return
+     */
     static UniformRandom& getInstance();
 
+    /**
+     * Generates a random integer between given range [min;max]
+     * @param min minimum value (inclusive)
+     * @param max maximum value (inclusive)
+     * @return Random integer
+     */
     int rand(int min, int max);
 
 };

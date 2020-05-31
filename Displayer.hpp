@@ -30,6 +30,10 @@ public:
     Displayer(Field* field, size_t initialHumansNb, size_t initialVampiresNb);
     ~Displayer();
 
+    /**
+     * Writes the Displayer's Field grid, showing borders and all Humanoids
+     * Note: if multiple Humanoid stand on the same position, only one will be drawn
+     */
     void displayGame() const;
 
 private:
