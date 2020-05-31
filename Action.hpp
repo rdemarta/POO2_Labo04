@@ -26,7 +26,7 @@ public:
     Action();
     virtual ~Action();
 
-    virtual void execute(Field* field) const;
+    virtual void execute(Field* field) const; // TODO virtual?
 
 
     void setNextX(size_t nextX);
