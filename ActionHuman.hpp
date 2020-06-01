@@ -18,6 +18,10 @@ public:
      */
     void execute(Field* field) override;
 
+    /**
+     * Prepare the action
+     * @param field
+     */
     void set(Field* field) override;
 };
 

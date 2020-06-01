@@ -17,6 +17,8 @@ class ActionChaseAndKill : public Action {
 public:
     /**
      * Constructor
+     * @param targetSymbol The symbol of the target we'll chase
+     * @param attackDistance The attack distance (range)
      */
     ActionChaseAndKill(char targetSymbol, size_t attackDistance);
 
