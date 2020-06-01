@@ -9,7 +9,7 @@
 #include "ActionChaseAndKill.hpp"
 #include "UniformRandom.hpp"
 
-void ActionHuman::execute(Field* field) const {
+void ActionHuman::execute(Field* field) {
     // Don't forget to call the parent execute method before (because it will be set the next isAlive)
     Action::execute(field);
 
@@ -19,9 +19,13 @@ void ActionHuman::execute(Field* field) const {
         field->decrementHumansNb();
         // 1/2 chance to create a new vampire
         if(UniformRandom::getInstance().rand(0,1)){
-            Humanoid* newVampire = new Vampire(getHumanoid()->getPosX(), getHumanoid()->getPosY(), new ActionChaseAndKill);
+            Humanoid* newVampire = new Vampire(getHumanoid()->getPosX(), getHumanoid()->getPosY(), new ActionChaseAndKill('h', 1));
             field->addHumanoid(newVampire);
             field->incrementVampiresNb();
         }
     }
+}
+
+void ActionHuman::set(Field* field) {
+    moveRandomly(field);
 }

@@ -37,7 +37,13 @@ public:
      * Execute the action
      * @param field The field
      */
-    virtual void execute(Field* field) const;
+    virtual void execute(Field* field);
+
+    /**
+     * Prepare the action
+     * @param field
+     */
+    virtual void set(Field* field) = 0;
 
     /**
      * Move randomly on the grid (the move distance is the one defined on the Humanoid sub-class

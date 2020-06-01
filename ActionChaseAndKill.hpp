@@ -12,17 +12,19 @@
 
 class ActionChaseAndKill : public Action {
 
+    char _targetSymbol;
+    size_t _attackDistance;
 public:
     /**
      * Constructor
      */
-    ActionChaseAndKill();
+    ActionChaseAndKill(char targetSymbol, size_t attackDistance);
 
     /**
      * Sets nextPos attributes to follow the given target
      * @param nearestTarget as a Humanoid
      */
-    void chaseHumanoid(Humanoid* nearestTarget);
+    void set(Field* field) override;
 };
 
 

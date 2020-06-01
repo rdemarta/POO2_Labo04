@@ -16,7 +16,9 @@ public:
      * Execute the Human action
      * @param field The Field
      */
-    void execute(Field* field) const override;
+    void execute(Field* field) override;
+
+    void set(Field* field) override;
 };
 
 

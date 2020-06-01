@@ -33,13 +33,13 @@ Field::Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb) :
     for(size_t i = 0; i < vampiresNb; ++i){
         randX = (size_t)UniformRandom::getInstance().rand(0,(int)_width-1);
         randY = (size_t)UniformRandom::getInstance().rand(0,(int)_height-1);
-        _humanoids.push_back(new Vampire(randX, randY, new ActionChaseAndKill));
+        _humanoids.push_back(new Vampire(randX, randY, new ActionChaseAndKill('h', 1)));
     }
 
     // Add Buffy
     randX = (size_t)UniformRandom::getInstance().rand(0,(int)_width-1);
     randY = (size_t)UniformRandom::getInstance().rand(0,(int)_height-1);
-    _humanoids.push_back(new Buffy(randX, randY, new Action));
+    _humanoids.push_back(new Buffy(randX, randY, new ActionChaseAndKill('v', 1)));
 }
 
 Field::~Field() {
@@ -110,7 +110,7 @@ size_t Field::distanceBetween(const Humanoid* h1, const Humanoid* h2) {
     // Floored hypotenuse gives the shortest path (unit = cell)
     size_t deltaX = distanceDifference(h1->getPosX(), h2->getPosX());
     size_t deltaY = distanceDifference(h1->getPosY(), h2->getPosY());
-    return(size_t)(hypot(deltaX, deltaY));
+    return (size_t)(hypot(deltaX, deltaY));
 }
 
 

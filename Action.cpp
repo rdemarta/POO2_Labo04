@@ -13,7 +13,7 @@ Action::~Action() {
 }
 
 
-void Action::execute(Field *field) const {
+void Action::execute(Field* field) {
     // Update the new pos only if the human is still alive
     // This way if we'll create a vampire, it will spawn at the initial human pos
     if(_nextAlive){

@@ -6,14 +6,17 @@
 
 #include "ActionChaseAndKill.hpp"
 
-ActionChaseAndKill::ActionChaseAndKill() {}
+ActionChaseAndKill::ActionChaseAndKill(char targetSymbol, size_t attackDistance)
+: _targetSymbol(targetSymbol), _attackDistance(attackDistance) {}
 
-void ActionChaseAndKill::chaseHumanoid(Humanoid* nearestTarget) {
+void ActionChaseAndKill::set(Field* field) {
+    Humanoid* nearestTarget = field->findNearest(getHumanoid(), _targetSymbol);
+
     // Check if vampire can attack from where he currently is
     size_t distanceFromNearest = Field::distanceBetween(getHumanoid(), nearestTarget);
 
     // Attack the target if he's at the right distance from us
-    if(distanceFromNearest <= 1) { // TODO move 1 to an attackDistance attribute (common with Buffy)
+    if(distanceFromNearest <= _attackDistance) {
         // Attack and kill it
         nearestTarget->getAction()->setNextAlive(false);
     }

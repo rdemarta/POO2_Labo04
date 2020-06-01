@@ -19,8 +19,7 @@ size_t Buffy::getMoveDistance() const {
 
 void Buffy::setAction(Field *f) const {
     if(f->getVampiresNb() > 0){
-        Humanoid *nearestVampire = f->findNearest(this, 'v');
-        ((ActionChaseAndKill *) getAction())->chaseHumanoid(nearestVampire);
+        getAction()->set(f);
     }else{
         getAction()->moveRandomly(f);
     }
