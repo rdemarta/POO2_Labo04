@@ -26,10 +26,23 @@ private:
     Displayer* _displayer;
 
 public:
+    /**
+     * Constructor
+     * @param width The grid width
+     * @param height The grid height
+     * @param humansNb The initial number of Humans
+     * @param vampiresNb The initial number of Vampires
+     */
     Field(size_t width, size_t height, size_t humansNb, size_t vampiresNb);
 
+    /**
+     * The destructor
+     */
     ~Field();
 
+    /**
+     * Display the game through the Displayer class
+     */
     void displayGame() const;
 
     /**
@@ -71,32 +84,36 @@ public:
      */
     static size_t distanceBetween(const Humanoid* h1, const Humanoid* h2);
 
-
-    /* GETTERS */
-
-    size_t getWidth() const;
-
-    size_t getHeight() const;
-
-    size_t getHumansNb() const;
-
-    size_t getVampiresNb() const;
-
-    const std::list<Humanoid *>& getHumanoids() const;
-
-    size_t getTurn() const;
-
-
+    /**
+     * Decrement by 1 the humansNb
+     */
     void decrementHumansNb();
+
+    /**
+     * Decrement by 1 the vampiresNb
+     */
     void decrementVampiresNb();
+
+    /**
+     * Increment the vampiresNb
+     */
     void incrementVampiresNb();
+
+
+    // Getters
+    size_t getWidth() const;
+    size_t getHeight() const;
+    size_t getHumansNb() const;
+    size_t getVampiresNb() const;
+    const std::list<Humanoid *>& getHumanoids() const;
+    size_t getTurn() const;
 
 private:
 
     /**
      * Calculates the absolute value of the difference between two unsigned integers.
-     * @param dist1
-     * @param dist2
+     * @param dist1 The first distance
+     * @param dist2 The second distance
      * @return absolute value of the difference
      */
     static size_t distanceDifference(size_t dist1, size_t dist2);

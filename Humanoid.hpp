@@ -24,7 +24,17 @@ private:
     Action* _action;
 
 public:
+    /**
+     * Constructor
+     * @param posX The X position
+     * @param posY The Y position
+     * @param action the associate Action
+     */
     Humanoid(size_t posX, size_t posY, Action* action);
+
+    /**
+     * Destructor
+     */
     virtual ~Humanoid();
 
     virtual void setAction(Field* f) const = 0;
@@ -32,10 +42,12 @@ public:
     virtual char getSymbol() const = 0;
     virtual size_t getMoveDistance() const = 0;
 
+    // Getters
     size_t getPosX() const;
     size_t getPosY() const;
     bool isAlive() const;
     Action *getAction() const;
+    // Setters
     void setPosX(size_t posX);
     void setPosY(size_t posY);
     void setIsAlive(bool isAlive);

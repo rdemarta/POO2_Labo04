@@ -28,20 +28,27 @@ public:
 
     virtual void execute(Field* field) const; // TODO virtual?
 
+    /**
+     * Move randomly on the grid (the move distance is the one defined on the Humanoid sub-class
+     * It will set the nextX / nextY position
+     * @param field The Field
+     */
     void moveRandomly(Field* field);
 
+    // Getters
+    Humanoid *getHumanoid() const;
+bool getNextAlive() const;
+    // Setters
     void setNextX(size_t nextX);
     void setNextY(size_t nextY);
-    bool getNextAlive() const;
     void setNextAlive(bool nextAlive);
-    Humanoid *getHumanoid() const;
     void setHumanoid(Humanoid* humanoid);
 
 protected:
     /**
      * Sets next position to make humanoid head towards given coordinates
-     * @param x
-     * @param y
+     * @param x The x position
+     * @param y The y position
      */
     void headTowardsPoint(size_t x, size_t y);
 

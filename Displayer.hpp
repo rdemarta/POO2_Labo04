@@ -27,7 +27,17 @@ class Displayer {
     static const unsigned GAME_NB_PER_SIMULATION = 10000;
 
 public:
+    /**
+     * Constructor
+     * @param field The Field
+     * @param initialHumansNb The initial number of Humans that will be displayed
+     * @param initialVampiresNb The initial number of Vampires that will be displayed
+     */
     Displayer(Field* field, size_t initialHumansNb, size_t initialVampiresNb);
+
+    /**
+     * Destructor
+     */
     ~Displayer();
 
     /**
@@ -37,6 +47,9 @@ public:
     void displayGame() const;
 
 private:
+    /**
+     * Ask on the command line interface which command will be execute for the next turn
+     */
     void askForCommand() const;
 };
 

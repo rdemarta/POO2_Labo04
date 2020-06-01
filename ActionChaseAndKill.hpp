@@ -13,11 +13,14 @@
 class ActionChaseAndKill : public Action {
 
 public:
+    /**
+     * Constructor
+     */
     ActionChaseAndKill();
 
     /**
      * Sets nextPos attributes to follow the given target
-     * @param nearestTarget
+     * @param nearestTarget as a Humanoid
      */
     void chaseHumanoid(Humanoid* nearestTarget);
 };

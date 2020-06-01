@@ -9,6 +9,10 @@
 
 #include <random>
 
+/**
+ * This class is a custom random singleton class. This way we can use the CPP random generator as we want in place
+ * of the old c-ctyle random.
+ */
 class UniformRandom {
 
 private:
@@ -24,7 +28,7 @@ public:
 
     /**
      * Get the unique instance of UniformRandom
-     * @return
+     * @return A unique UniformRandom object
      */
     static UniformRandom& getInstance();
 

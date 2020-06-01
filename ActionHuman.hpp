@@ -12,6 +12,10 @@
 class ActionHuman : public Action {
 
 public:
+    /**
+     * Execute the Human action
+     * @param field The Field
+     */
     void execute(Field* field) const override;
 };
 
