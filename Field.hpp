@@ -55,7 +55,7 @@ public:
      * Searches the nearest Humanoid (of given symbol)
      * @param h Humanoid from which to search
      * @param targetSymbol target type
-     * @return
+     * @return The nearest Humanoid
      */
     Humanoid* findNearest(const Humanoid* h, char targetSymbol);
 
@@ -78,9 +78,9 @@ public:
 
     /**
      * Calculates absolute hypotenuse distance between two humanoids
-     * @param h1
-     * @param h2
-     * @return
+     * @param h1 The first Humanoid
+     * @param h2 The first Humanoid
+     * @return The absolute hypotenuse distance between the two Humanoid
      */
     static size_t distanceBetween(const Humanoid* h1, const Humanoid* h2);
 
