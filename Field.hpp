@@ -22,7 +22,7 @@ private:
     size_t _humansNb;
     size_t _vampiresNb;
     std::list<Humanoid*> _humanoids;
-    int _turn;
+    size_t _turn;
     Displayer* _displayer;
 
 public:
@@ -50,12 +50,12 @@ public:
      * Proceeds to apply Humanoids' Actions
      * @return the current turn's number
      */
-    int nextTurn();
+    size_t nextTurn();
 
     /**
-     * Deletes all Humanoids from the Field
+     * Deletes all remaining Humanoids from the Field
      */
-    void clearHumanoids();
+    void clearHumanoids() const;
 
     /**
      * Inserts an Humanoid into the list
@@ -82,9 +82,9 @@ public:
 
     size_t getVampiresNb() const;
 
-    const std::list<Humanoid *> &getHumanoids() const;
+    const std::list<Humanoid *>& getHumanoids() const;
 
-    int getTurn() const;
+    size_t getTurn() const;
 
 
     void decrementHumansNb();

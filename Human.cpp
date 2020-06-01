@@ -9,11 +9,11 @@
 Human::Human(size_t posX, size_t posY, Action* action) : Humanoid(posX, posY, action) {}
 
 char Human::getSymbol() const {
-    return Human::_symbol;
+    return Human::SYMBOL;
 }
 
 size_t Human::getMoveDistance() const {
-    return Human::_moveDistance;
+    return Human::MOVE_DISTANCE;
 }
 
 void Human::setAction(Field *f) const {

@@ -28,20 +28,14 @@ public:
 
     virtual void execute(Field* field) const; // TODO virtual?
 
+    void moveRandomly(Field* field);
 
     void setNextX(size_t nextX);
-
     void setNextY(size_t nextY);
-
     bool getNextAlive() const;
-
     void setNextAlive(bool nextAlive);
-
     Humanoid *getHumanoid() const;
-
     void setHumanoid(Humanoid* humanoid);
-
-    void moveRandomly(Field* field);
 
 protected:
     /**

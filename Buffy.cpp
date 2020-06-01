@@ -10,11 +10,11 @@
 Buffy::Buffy(size_t posX, size_t posY, Action* action) : Humanoid(posX, posY, action) {}
 
 char Buffy::getSymbol() const {
-    return Buffy::_symbol;
+    return Buffy::SYMBOL;
 }
 
 size_t Buffy::getMoveDistance() const {
-    return Buffy::_moveDistance;
+    return Buffy::MOVE_DISTANCE;
 }
 
 void Buffy::setAction(Field *f) const {

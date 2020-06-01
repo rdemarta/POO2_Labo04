@@ -27,7 +27,6 @@ public:
     Humanoid(size_t posX, size_t posY, Action* action);
     virtual ~Humanoid();
 
-    bool isAlive() const;
     virtual void setAction(Field* f) const = 0;
     virtual void executeAction(Field* f) const = 0;
     virtual char getSymbol() const = 0;
@@ -35,6 +34,7 @@ public:
 
     size_t getPosX() const;
     size_t getPosY() const;
+    bool isAlive() const;
     Action *getAction() const;
     void setPosX(size_t posX);
     void setPosY(size_t posY);

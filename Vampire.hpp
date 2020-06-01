@@ -13,8 +13,8 @@
 class Vampire : public Humanoid{
 
 private:
-    static const char _symbol = 'v';
-    static const size_t _moveDistance = 1;
+    static const char SYMBOL = 'v';
+    static const size_t MOVE_DISTANCE = 1;
 
 public:
     Vampire(size_t posX, size_t posY, Action* action);

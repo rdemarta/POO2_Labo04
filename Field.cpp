@@ -76,7 +76,7 @@ Humanoid* Field::findNearest(const Humanoid* h, char targetSymbol) {
     return nearest;
 }
 
-int Field::nextTurn() {
+size_t Field::nextTurn() {
     // Déterminer les prochaines actions
     for(list<Humanoid*>::iterator it = _humanoids.begin(); it != _humanoids.end(); it++)
         (*it)->setAction(this);
@@ -96,7 +96,7 @@ int Field::nextTurn() {
 }
 
 
-void Field::clearHumanoids() {
+void Field::clearHumanoids() const {
     for(Humanoid* humanoid : _humanoids){
         delete humanoid;
     }
@@ -137,7 +137,7 @@ const std::list<Humanoid *> &Field::getHumanoids() const {
     return _humanoids;
 }
 
-int Field::getTurn() const {
+size_t Field::getTurn() const {
     return _turn;
 }
 

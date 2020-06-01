@@ -13,8 +13,8 @@
 class Human : public Humanoid{
 
 private:
-    static const char _symbol = 'h';
-    static const size_t _moveDistance = 1;
+    static const char SYMBOL = 'h';
+    static const size_t MOVE_DISTANCE = 1;
 
 public:
     Human(size_t posX, size_t posY, Action* action);
