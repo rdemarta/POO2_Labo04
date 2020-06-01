@@ -23,10 +23,21 @@ private:
     Humanoid* _humanoid;
 
 public:
+    /**
+     * Constructor
+     */
     Action();
+
+    /**
+     * Destructor
+     */
     virtual ~Action();
 
-    virtual void execute(Field* field) const; // TODO virtual?
+    /**
+     * Execute the action
+     * @param field The field
+     */
+    virtual void execute(Field* field) const;
 
     /**
      * Move randomly on the grid (the move distance is the one defined on the Humanoid sub-class
