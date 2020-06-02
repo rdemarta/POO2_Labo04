@@ -20,7 +20,7 @@ void Displayer::displayGame() const {
     for(size_t y = 0; y < _field->getHeight(); ++y){
         std::cout << LEFT_RIGHT_BORDER_CHAR;
         for(size_t x = 0; x < _field->getWidth(); ++x){
-            char charToDisplay = '.'; // TODO set to ' ' (as '.' is for debugging)
+            char charToDisplay = ' ';
             for(Humanoid* humanoid: _field->getHumanoids()){
                 if(humanoid->getPosX() == x && humanoid->getPosY() == y){
                     charToDisplay = humanoid->getSymbol();
