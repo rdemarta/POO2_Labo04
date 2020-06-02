@@ -54,7 +54,7 @@ public:
 
     // Getters
     Humanoid *getHumanoid() const;
-bool getNextAlive() const;
+    bool getNextAlive() const;
     // Setters
     void setNextX(size_t nextX);
     void setNextY(size_t nextY);

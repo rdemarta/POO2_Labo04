@@ -96,7 +96,7 @@ size_t Field::nextTurn() {
 }
 
 
-void Field::clearHumanoids() const {
+void Field::clearHumanoids() {
     for(Humanoid* humanoid : _humanoids){
         delete humanoid;
     }

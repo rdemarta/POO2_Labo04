@@ -17,7 +17,7 @@ size_t Buffy::getMoveDistance() const {
     return Buffy::MOVE_DISTANCE;
 }
 
-void Buffy::setAction(Field *f) const {
+void Buffy::setAction(Field *f) {
     if(f->getVampiresNb() > 0){
         getAction()->set(f);
     }else{
@@ -25,6 +25,6 @@ void Buffy::setAction(Field *f) const {
     }
 }
 
-void Buffy::executeAction(Field *f) const {
+void Buffy::executeAction(Field *f) {
     getAction()->execute(f);
 }

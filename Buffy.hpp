@@ -40,13 +40,13 @@ public:
      * Set the Action
      * @param f The field
      */
-    void setAction(Field *f) const override;
+    void setAction(Field *f) override;
 
     /**
      * Execute the action
      * @param f The field
      */
-    void executeAction(Field *f) const override;
+    void executeAction(Field *f) override;
 
 };
 

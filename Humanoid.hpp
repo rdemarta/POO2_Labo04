@@ -42,13 +42,13 @@ public:
      * and after that, we'll execute them. This way all actions will be independents and executed at the same time
      * @param f The Field
      */
-    virtual void setAction(Field* f) const = 0;
+    virtual void setAction(Field* f) = 0;
 
     /**
      * Execute the action previously set
      * @param f The Field
      */
-    virtual void executeAction(Field* f) const = 0;
+    virtual void executeAction(Field* f) = 0;
 
     /**
      * Get the symbol associate to the Class

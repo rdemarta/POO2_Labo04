@@ -19,14 +19,14 @@ size_t Vampire::getMoveDistance() const {
     return Vampire::MOVE_DISTANCE;
 }
 
-void Vampire::setAction(Field* f) const {
+void Vampire::setAction(Field* f) {
     // Vampire chase humans only if there is one or more, otherwise he waits
     if(f->getHumansNb() > 0){
         getAction()->set(f);
     }
 }
 
-void Vampire::executeAction(Field *f) const {
+void Vampire::executeAction(Field *f) {
     if(!getAction()->getNextAlive()){
         f->decrementVampiresNb();
     }

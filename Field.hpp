@@ -68,7 +68,7 @@ public:
     /**
      * Deletes all remaining Humanoids from the Field
      */
-    void clearHumanoids() const;
+    void clearHumanoids();
 
     /**
      * Inserts an Humanoid into the list

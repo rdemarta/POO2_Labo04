@@ -16,10 +16,10 @@ size_t Human::getMoveDistance() const {
     return Human::MOVE_DISTANCE;
 }
 
-void Human::setAction(Field *f) const {
+void Human::setAction(Field *f) {
     getAction()->set(f);
 }
 
-void Human::executeAction(Field *f) const {
+void Human::executeAction(Field *f) {
     getAction()->execute(f);
 }
