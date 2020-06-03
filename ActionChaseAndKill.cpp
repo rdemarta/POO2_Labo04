@@ -4,6 +4,7 @@
  * Date: 30.04.2020
  */
 
+#include <iostream>
 #include "ActionChaseAndKill.hpp"
 
 ActionChaseAndKill::ActionChaseAndKill(char targetSymbol, size_t attackDistance)
@@ -15,8 +16,8 @@ void ActionChaseAndKill::set(Field* field) {
     // Check if vampire can attack from where he currently is
     size_t distanceFromNearest = Field::distanceBetween(getHumanoid(), nearestTarget);
 
-    // Attack the target if he's at the right distance from us
-    if(distanceFromNearest <= _attackDistance) {
+    // Attack the target if he's still alive and at the right distance from us
+    if(distanceFromNearest <= _attackDistance && nearestTarget->getAction()->getNextAlive()) {
         // Attack and kill it
         nearestTarget->getAction()->setNextAlive(false);
     }
